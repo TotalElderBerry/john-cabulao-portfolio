@@ -1,0 +1,5 @@
+# Copy to sources.local.yml (git-ignored) and point each project slug at its folder
+# under the source root (PORTFOLIO_SOURCE, default ..).
+project-one: "MULTI TRADES/Cubit Jobs/<folder>"
+project-two: "MULTI TRADES/PlanSwift Jobs/<folder>"
+project-three: "MULTI TRADES/CostX Jobs/<folder>"
