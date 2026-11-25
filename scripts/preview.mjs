@@ -23,7 +23,9 @@ async function find(p) {
 }
 
 createServer(async (req, res) => {
-  const path = decodeURIComponent(new URL(req.url, 'http://x').pathname)
+  let path
+  try { path = decodeURIComponent(new URL(req.url, 'http://x').pathname) }
+  catch { res.writeHead(400).end('Bad request'); return }
   let file = await find(path)
   let status = 200
   if (!file) { file = await find('/404.html'); status = 404 }

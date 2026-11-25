@@ -2,7 +2,7 @@
   <footer class="foot gutter">
     <div class="col">
       <div class="label">Contact</div>
-      <a href="mailto:john@cabulao.com">john@cabulao.com</a>
+      <a href="mailto:jlcabulao123456@gmail.com">jlcabulao123456@gmail.com</a>
       <div>Cebu, PH — working AU hours</div>
     </div>
     <div class="col">

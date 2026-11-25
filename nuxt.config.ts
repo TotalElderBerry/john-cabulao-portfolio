@@ -18,8 +18,13 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
-    // failOnError off until Tasks 4-7 add the linked pages; restore then.
-    prerender: { crawlLinks: true, failOnError: false, routes: ['/', '/404.html'] },
+    prerender: {
+      crawlLinks: true,
+      failOnError: true,
+      routes: ['/', '/404.html'],
+      // Pages not built yet; the later tasks that build each page remove it from this list.
+      ignore: ['/services/', '/about/', '/contact/', '/single-trade/'],
+    },
   },
   runtimeConfig: {
     public: { formspreeId: '' },
