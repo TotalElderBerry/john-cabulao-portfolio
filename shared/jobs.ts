@@ -1,0 +1,38 @@
+import { TRADES, type Job, type Trade } from './schemas'
+
+export { TRADES }
+export type { Trade }
+
+export function publicOnly<T extends { public: boolean }>(xs: T[]): T[] {
+  return xs.filter((x) => x.public)
+}
+
+export function tradeCounts(jobs: Job[]): Record<Trade, number> & { all: number } {
+  const counts = { all: 0 } as Record<Trade, number> & { all: number }
+  for (const t of TRADES) counts[t] = 0
+  for (const j of publicOnly(jobs)) {
+    counts[j.trade]++
+    counts.all++
+  }
+  return counts
+}
+
+export function jobPath(j: Pick<Job, 'trade' | 'job'>): string {
+  return `/single-trade/${j.trade}/${j.job}/`
+}
+
+export function neighbours(jobs: Job[], current: Job): { prev: Job | null; next: Job | null } {
+  const list = publicOnly(jobs)
+    .filter((j) => j.trade === current.trade)
+    .sort((a, b) => a.job - b.job)
+  const prev = list.filter((j) => j.job < current.job).pop() ?? null
+  const next = list.find((j) => j.job > current.job) ?? null
+  return { prev, next }
+}
+
+export function formatQty(n: number, unit: string): string {
+  if (unit === 'ea' || unit === 'Item') return `${Math.round(n)} ${unit}`
+  let s = String(Math.round(n * 100) / 100)
+  if (unit === 'm' && !s.includes('.')) s += '.0'
+  return `${s} ${unit}`
+}
