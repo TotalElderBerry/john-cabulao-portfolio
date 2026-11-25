@@ -1,0 +1,15 @@
+node_modules
+.nuxt
+.output
+.data
+.superpowers/
+public/media/
+sources.local.yml
+*.pdf
+*.xlsx
+*.docx
+test-results
+playwright-report
+.DS_Store
+.env
+dist

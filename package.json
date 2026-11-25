@@ -1,0 +1,27 @@
+{
+  "name": "john-cabulao-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "node scripts/preview.mjs",
+    "test": "vitest run",
+    "e2e": "playwright test",
+    "assets": "node scripts/assets/cli.mjs",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^4.7.0",
+    "vue": "^3.5.46",
+    "vue-router": "^5.5.1"
+  },
+  "devDependencies": {
+    "@nuxt/test-utils": "^4.4.0",
+    "@playwright/test": "^1.65.1",
+    "@vue/test-utils": "^2.6.0",
+    "happy-dom": "^21.0.4",
+    "typescript": "^5.9.3",
+    "vitest": "^5.1.2"
+  }
+}
