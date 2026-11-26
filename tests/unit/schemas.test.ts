@@ -17,7 +17,14 @@ describe('schemas', () => {
   it('site defaults formSuccess and project defaults trim', () => {
     const s = siteSchema.parse({ name:'a', role:'b', bio:'c', statement:'d', email:'e@x.com', phone:null, location:'l', software:[], credentials:[], services:[] })
     expect(s.formSuccess).toBe('Thanks — John will reply within one working day.')
+    expect(s.experience).toEqual([]); expect(s.education).toEqual([])
     const p = projectSchema.parse({ slug:'s', title:'t', type:'ty', tool:'Cubit', trades:[], hero:'h', slider:{ render:'r', takeoff:'t' }, gallery:[] })
     expect(p.trim).toEqual({}); expect(p.public).toBe(false)
+  })
+  it('site accepts experience and education', () => {
+    const s = siteSchema.parse({ name:'a', role:'b', bio:'c', statement:'d', email:'e@x.com', phone:null, location:'l', software:[], credentials:[], services:[],
+      experience:[{ role:'r', org:'o', period:'2024', points:['p'] }], education:[{ degree:'d', school:'s', period:'2019' }] })
+    expect(s.experience[0]!.points).toEqual(['p']); expect(s.education[0]!.school).toBe('s')
+    expect(() => siteSchema.parse({ name:'a', role:'b', bio:'c', statement:'d', email:'e', phone:null, location:'l', software:[], credentials:[], services:[], experience:[{ role:'r' }] })).toThrow()
   })
 })

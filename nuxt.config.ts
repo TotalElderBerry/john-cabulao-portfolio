@@ -46,8 +46,6 @@ export default defineNuxtConfig({
       crawlLinks: true,
       failOnError: true,
       routes: ['/', '/404.html', '/single-trade/', ...tradeRoutes, ...jobRoutes, '/multi-trade/', ...projectRoutes],
-      // Pages not built yet; the later tasks that build each page remove it from this list.
-      ignore: ['/services/', '/about/', '/contact/'],
     },
   },
   runtimeConfig: {

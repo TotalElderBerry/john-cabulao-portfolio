@@ -3,7 +3,7 @@ const { data: site } = await useAsyncData('site', () => queryCollection('site').
 </script>
 
 <template>
-  <footer v-if="site" class="foot gutter">
+  <footer v-if="site" class="foot">
     <div class="col">
       <div class="label">Contact</div>
       <a :href="`mailto:${site.email}`">{{ site.email }}</a>
@@ -23,7 +23,7 @@ const { data: site } = await useAsyncData('site', () => queryCollection('site').
 <style scoped>
 .foot {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
-  padding-block: 64px 48px; margin-top: 96px;
+  padding: 64px max(16px, 4vw) 48px; margin-top: 96px;
   border-top: 1px solid var(--line);
   font-size: 13px; line-height: 1.7;
 }

@@ -4,6 +4,7 @@ import * as yaml from 'js-yaml'
 import { describe, expect, it } from 'vitest'
 import { jobSchema, projectSchema, siteSchema } from '../../shared/schemas'
 import { tradeCounts } from '../../shared/jobs'
+import { escapeRe as escape, loadForbiddenTerms, wholeWord } from '../helpers/forbidden'
 
 const root = resolve(__dirname, '../../content')
 const list = (dir: string) =>
@@ -13,19 +14,9 @@ const jobFiles = list('single-trade')
 const projectFiles = list('multi-trade')
 const siteFile = join(root, 'site.yml')
 const read = (f: string) => readFileSync(f, 'utf8')
-// Forbidden terms (client folder names, reference and company names seen on sheets) live only in the
-// git-ignored sources.local.yml, so they never appear in this public repository.
-const sourcesFile = resolve(__dirname, '../../sources.local.yml')
-const sources = existsSync(sourcesFile) ? ((yaml.load(readFileSync(sourcesFile, 'utf8')) ?? {}) as Record<string, unknown>) : null
-const forbiddenTerms = sources
-  ? [
-      ...Object.entries(sources)
-        .filter(([k, v]) => k !== 'forbiddenTerms' && typeof v === 'string')
-        .map(([, v]) => basename(v as string)),
-      ...((sources.forbiddenTerms as string[] | undefined) ?? []),
-    ].filter(Boolean)
-  : []
-const escape = (t: string) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+const forbidden = loadForbiddenTerms()
+const sources = forbidden !== null
+const forbiddenTerms = forbidden ?? []
 const jobs = jobFiles.map((f) => ({ ...jobSchema.parse(yaml.load(read(f))), __file: f }))
 const projects = projectFiles.map((f) => projectSchema.parse(yaml.load(read(f))))
 const allContentText = [...jobFiles, ...projectFiles, ...(existsSync(siteFile) ? [siteFile] : [])].map(read)
@@ -100,7 +91,15 @@ describe('content', () => {
     expect(site.credentials.join(' ')).toMatch(/Cum Laude/)
     expect(site.credentials.join(' ')).toMatch(/Costimate/)
     expect(site.software).toContain('PlanSwift')
+    expect(site.experience.map((e) => e.org).join(' ')).toMatch(/Costimate/)
+    expect(site.experience.map((e) => e.org).join(' ')).toMatch(/A&D 7710/)
+    expect(site.education[0]!.degree).toMatch(/Cum Laude/)
     const ids = new Set(jobs.map((j) => `${j.trade}-${String(j.job).padStart(2, '0')}`))
     for (const s of site.services) if (s.example) expect(ids.has(s.example)).toBe(true)
+  })
+
+  it.skipIf(!sources)('site copy names no client or reference (terms from sources.local.yml)', () => {
+    const site = JSON.stringify(siteSchema.parse(yaml.load(read(siteFile))))
+    expect(forbiddenTerms.filter((t) => wholeWord(t).test(site)).length).toBe(0)
   })
 })

@@ -89,6 +89,12 @@ export const siteSchema = z.object({
   services: z.array(
     z.object({ title: z.string(), send: z.string(), get: z.string(), example: z.string().optional() }),
   ),
+  experience: z
+    .array(z.object({ role: z.string(), org: z.string(), period: z.string(), points: z.array(z.string()).default([]) }))
+    .default([]),
+  education: z
+    .array(z.object({ degree: z.string(), school: z.string(), period: z.string() }))
+    .default([]),
   formSuccess: z.string().default('Thanks — John will reply within one working day.'),
 })
 export type Site = z.infer<typeof siteSchema>

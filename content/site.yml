@@ -38,4 +38,30 @@ services:
   - title: Quote vetting
     send: The subcontractor or supplier quotes, and the drawings they priced from.
     get: A line-by-line review that flags pricing anomalies, scope gaps and value-engineering options.
+experience:
+  - role: Construction Estimator
+    org: Costimate (Australia, remote)
+    period: Current
+    points:
+      - Single-trade and multi-trade BOQs, from civil and structural to finishes and external works.
+      - Cost plan estimates priced against current market rates.
+      - Subcontractor and supplier quote vetting for anomalies, scope gaps and value engineering.
+      - Fit-outs, new builds and refurbishments, measured in PlanSwift, Cubit and CostX.
+  - role: Freelance Construction Estimator
+    org: Australian construction market (remote)
+    period: Before Costimate
+    points:
+      - Single-trade take-offs in PlanSwift with fast turnaround.
+      - Worked with Australian standards, specification formats and cost coding.
+      - Served builders, subcontractors and developers.
+  - role: Office & Site Engineer
+    org: A&D 7710 Construction Services
+    period: 2024 – 2025
+    points:
+      - Bid quotations, BOMs and BOQs for renovation and new construction projects.
+      - Pre-bidding site surveys; scheduling, labour and procurement once projects were awarded.
+education:
+  - degree: Bachelor of Science in Civil Engineering, Cum Laude
+    school: University of Southern Philippines Foundation
+    period: 2019 – 2023
 formSuccess: Thanks — John will reply within one working day.
