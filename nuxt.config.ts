@@ -28,7 +28,7 @@ export default defineNuxtConfig({
       failOnError: true,
       routes: ['/', '/404.html'],
       // Pages not built yet; the later tasks that build each page remove it from this list.
-      ignore: ['/services/', '/about/', '/contact/', '/single-trade/'],
+      ignore: ['/services/', '/about/', '/contact/', '/single-trade/', '/multi-trade/'],
     },
   },
   runtimeConfig: {
