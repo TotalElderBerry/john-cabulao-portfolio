@@ -9,6 +9,7 @@ import sharp from 'sharp'
 import { jobSchema, projectSchema } from '../../shared/schemas.ts'
 import { findFile, findSheetPdf, sourceFolderFor } from './locate.mjs'
 import { redact, trim, writeSizes } from './process.mjs'
+import { publishPlan, rectsForPage } from './pages.mjs'
 import { renderPdfPages } from './render.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
@@ -90,17 +91,18 @@ for (const { text, data } of jobFiles) {
   const t0 = Date.now()
   const pages = await renderPdfPages(pdf, 3200)
   await rm(outDir, { recursive: true, force: true })
+  const plan = publishPlan(pages.length, job.pages)
   let ratio = 1
-  for (let i = 0; i < pages.length; i++) {
-    const img = await redact(pages[i], job.redact)
-    const r = await writeSizes(img, path.join(outDir, `p${i + 1}`), JOB_WIDTHS)
-    if (i === 0) ratio = r
+  for (const { source, out } of plan) {
+    const img = await redact(pages[source - 1], rectsForPage(job.redact, source))
+    const r = await writeSizes(img, path.join(outDir, `p${out}`), JOB_WIDTHS)
+    if (out === 1) ratio = r
   }
   for (const c of pages.capped) console.warn(`${key}: page ${c.page} width capped to ${c.width}px (60MP limit)`)
-  manifest.jobs[key] = { pages: pages.length, ratio }
+  manifest.jobs[key] = { pages: plan.length, ratio }
   cache[`jobs/${key}`] = stamp
   processed++
-  console.log(`${key}: ${pages.length} page(s) in ${Date.now() - t0}ms`)
+  console.log(`${key}: ${plan.length} of ${pages.length} page(s) in ${Date.now() - t0}ms`)
 }
 if (!only) {
   for (const key of Object.keys(manifest.jobs)) {

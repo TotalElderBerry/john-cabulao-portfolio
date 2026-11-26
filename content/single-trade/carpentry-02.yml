@@ -1,0 +1,27 @@
+trade: carpentry
+job: 2
+public: true
+projectType: School gymnasium new build
+tool: PlanSwift
+scope: Wall framing and linings
+pages: [1]
+redact: []
+legend:
+  - { label: "WT-EW02a @1720mm ht", qty: 6.1, unit: m, color: "#c18364" }
+  - { label: "WT-EW02a @3000mm ht", qty: 4.1, unit: m, color: "#c18364" }
+  - { label: "WT-IW01b @3000mm ht", qty: 3.5, unit: m, color: "#fe66ff" }
+  - { label: "WT-AW01 @2700mm ht", qty: 57.6, unit: m, color: "#6665ff" }
+  - { label: "WT-AW02 @4600mm ht", qty: 10.3, unit: m, color: "#65b263" }
+  - { label: "WT-AW02 @4600mm ht", qty: 3.3, unit: m, color: "#65b262" }
+  - { label: "WT-AW02 @4600mm ht", qty: 4, unit: m, color: "#65b262" }
+  - { label: "WT-AW03 @2700mm ht", qty: 5, unit: m, color: "#65fe65" }
+  - { label: "WT-EW01 @1550mm ht", qty: 27.8, unit: m, color: "#fffe65" }
+  - { label: "WT-EW01 @2700mm ht", qty: 30.2, unit: m, color: "#fffd65" }
+  - { label: "WT-EW01 @3000mm ht", qty: 41.7, unit: m, color: "#fffe65" }
+  - { label: "WT-EW02b @2700mm ht", qty: 2.2, unit: m, color: "#b265b4" }
+  - { label: "WT-IW01b @2700mm ht", qty: 7.9, unit: m, color: "#fe66ff" }
+  - { label: "WT-IW01a @2700mm ht", qty: 14.7, unit: m, color: "#fe6463" }
+  - { label: "WT-IW01a @3000mm ht", qty: 3.7, unit: m, color: "#fe6463" }
+  - { label: "WT-EW01 @2100mm ht", qty: 5.6, unit: m, color: "#63ffff" }
+  - { label: "WT-EW01 @1000mm ht", qty: 3.9, unit: m, color: "#ffa266" }
+boqDownload: false

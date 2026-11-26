@@ -1,0 +1,28 @@
+trade: plastering
+job: 10
+public: true
+projectType: Retail podium refurbishment
+tool: PlanSwift
+scope: Partitions to untagged walls
+pages: [1]
+redact:
+  - { x: 6.4, y: 39, w: 4.6, h: 1.8 }
+  - { x: 53.5, y: 72.2, w: 9.6, h: 3.2 }
+  - { x: 75.2, y: 48.8, w: 2.3, h: 10 }
+  - { x: 13.4, y: 22.7, w: 4.4, h: 4.1 }
+  - { x: 26, y: 23.5, w: 2.6, h: 1.6 }
+  - { x: 33.2, y: 34.1, w: 2.6, h: 1.6 }
+  - { x: 38.7, y: 34.1, w: 2.6, h: 1.6 }
+  - { x: 46.6, y: 31, w: 2.1, h: 2.4 }
+  - { x: 47.4, y: 59.4, w: 1.6, h: 1.4 }
+  - { x: 35.2, y: 66.5, w: 1.8, h: 1.4 }
+  - { x: 62.6, y: 58.3, w: 3.7, h: 1.6 }
+  - { x: 49.9, y: 36.6, w: 2.5, h: 1.5 }
+  - { x: 65.5, y: 47.8, w: 2.3, h: 1.4 }
+  - { x: 29.5, y: 36, w: 1.6, h: 0.9 }
+legend:
+  - { label: "T3 @3600mm ht", qty: 8.4, unit: m, color: "#fffe65" }
+  - { label: "Assume partition to untagged wall @3600mm ht", qty: 29.4, unit: m, color: "#b36565" }
+  - { label: "Assume partition to untagged wall (curve) @3600mm ht", qty: 3.7, unit: m, color: "#b36565" }
+  - { label: "External Angle", qty: 1, unit: ea, color: "#ff66ff" }
+boqDownload: false

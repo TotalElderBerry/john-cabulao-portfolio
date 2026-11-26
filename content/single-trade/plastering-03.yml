@@ -1,0 +1,12 @@
+trade: plastering
+job: 3
+public: true
+projectType: Office floor refurbishment
+tool: PlanSwift
+scope: Grid and tile ceilings
+pages: [1]
+redact:
+  - { x: 0, y: 78, w: 1.8, h: 21 }
+legend:
+  - { label: "CE01 - Grid and ceiling tile", qty: 269.9, unit: m², color: "#fc6262" }
+boqDownload: false

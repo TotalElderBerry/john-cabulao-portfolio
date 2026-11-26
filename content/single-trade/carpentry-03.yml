@@ -1,0 +1,32 @@
+trade: carpentry
+job: 3
+public: true
+projectType: School science building new build
+tool: PlanSwift
+scope: Wall framing and linings
+pages: [1]
+redact:
+  - { x: 91.6, y: 1.5, w: 8.4, h: 15.5 }
+  - { x: 86.8, y: 2.3, w: 4.8, h: 14.7 }
+legend:
+  - { label: "WT01b @3600mm ht", qty: 11.3, unit: m, color: "#67b3b3" }
+  - { label: "WT01 @1800mm ht", qty: 22.6, unit: m, color: "#6667fe" }
+  - { label: "WT01 @3600mm ht", qty: 56, unit: m, color: "#6466ff" }
+  - { label: "WT01aa @1410mm ht", qty: 1.8, unit: m, color: "#66fe66" }
+  - { label: "WT01aa @3760mm ht", qty: 21.4, unit: m, color: "#66fe66" }
+  - { label: "WT20a @3500mm ht", qty: 15.7, unit: m, color: "#66e2ff" }
+  - { label: "WT20 @3500mm ht", qty: 16.1, unit: m, color: "#fa6161" }
+  - { label: "WT21 @1800mm ht", qty: 30.2, unit: m, color: "#fda164" }
+  - { label: "WT21 @3500mm ht", qty: 9.1, unit: m, color: "#ffa467" }
+  - { label: "WT22 @1143mm ht", qty: 13.5, unit: m, color: "#ff67ff" }
+  - { label: "WT22 @3500mm ht", qty: 0.6, unit: m, color: "#ff67ff" }
+  - { label: "WT23 @3570mm ht", qty: 14, unit: m, color: "#8484c1" }
+  - { label: "WT24 @3500mm ht", qty: 14.1, unit: m, color: "#66b365" }
+  - { label: "WT25 @3500mm ht", qty: 20.9, unit: m, color: "#67fe66" }
+  - { label: "WT27 (curve) @900mm ht", qty: 2.8, unit: m, color: "#b1b266" }
+  - { label: "WT27 (curve) @1200mm ht", qty: 1.6, unit: m, color: "#b1b466" }
+  - { label: "WT27 @900mm ht", qty: 25.9, unit: m, color: "#b1b466" }
+  - { label: "WT27 @1200mm ht", qty: 4.4, unit: m, color: "#b1b466" }
+  - { label: "WT30 @1100mm ht", qty: 14.5, unit: m, color: "#b266b4" }
+  - { label: "WT34 @3600mm ht", qty: 8.2, unit: m, color: "#ffdf64" }
+boqDownload: false

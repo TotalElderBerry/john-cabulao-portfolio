@@ -1,0 +1,57 @@
+trade: plastering
+job: 1
+public: true
+flagship: true
+projectType: Office fit-out
+tool: PlanSwift
+scope: Partitions, ceilings, glazing
+pages: [1]
+redact:
+  - { x: 80.5, y: 19.38, w: 8.6, h: 0.52, page: 1 }
+legend:
+  - { label: "PT1 @3300mm ht", qty: 101.5, unit: m, color: "#8b9cff" }
+  - { label: "PT2 @3300mm ht", qty: 21.4, unit: m, color: "#a86464" }
+  - { label: "PT1 (Wet) @3300mm ht", qty: 11.5, unit: m, color: "#77ffff" }
+  - { label: "PT2 (Wet) @3300mm ht", qty: 5.7, unit: m, color: "#b36665" }
+  - { label: "PT1 (Curve) @3300mm ht", qty: 3.3, unit: m, color: "#fafc64" }
+  - { label: "PG1 @2700mm ht", qty: 56.0, unit: m, color: "#f0a070" }
+  - { label: "PG1 @2360mm ht", qty: 13.1, unit: m, color: "#8fbf9f" }
+  - { label: "External angle", qty: 22, unit: ea, color: "#ff6b6b" }
+  - { label: "D01 - 840x2700mm", qty: 2, unit: ea, color: "#fdff60" }
+  - { label: "D01 - 880x2700mm", qty: 1, unit: ea, color: "#68b2b0" }
+  - { label: "D02 - 880x2700mm", qty: 10, unit: ea, color: "#6b6bff" }
+  - { label: "D02 - 940x2700mm", qty: 6, unit: ea, color: "#b265b3" }
+  - { label: "D03 - 1000x2700mm", qty: 1, unit: ea, color: "#fcfe65" }
+  - { label: "Door - 940x2700mm", qty: 2, unit: ea, color: "#69fa6f" }
+  - { label: "Door - 1840x2700mm", qty: 2, unit: ea, color: "#67fdfd" }
+  - { label: "Door - 1000x2700mm", qty: 1, unit: ea, color: "#6565b1" }
+boq:
+  - ref: "2.01"
+    description: "PT1 — slab to slab, 64 mm steel stud @ 600 ctrs, 2×13 mm plasterboard one side, 1×13 mm other, 60 mm insulation"
+    qty: 335.05
+    unit: m²
+    note: "Measured on plan: 101.5 m @ 3300 ht"
+    sheet: 1
+    hotspot: { x: 14, y: 18.5, w: 8.5, h: 43 }
+  - ref: "2.03"
+    description: "PT2 — slab to slab, 64 mm steel stud, 2×13 mm plasterboard both sides, 60 mm insulation"
+    qty: 70.55
+    unit: m²
+    note: "Measured on plan: 21.4 m @ 3300 ht"
+    sheet: 1
+    hotspot: { x: 40, y: 21.5, w: 15.2, h: 11.5 }
+  - ref: "2.09"
+    description: "External angle"
+    qty: 72.60
+    unit: Lm
+    note: "Counted on plan: 22 ea"
+    sheet: 1
+    hotspot: { x: 14, y: 20.5, w: 8.8, h: 22 }
+  - ref: "2.11"
+    description: "50 mm high direct-fix skirting"
+    qty: 280.08
+    unit: Lm
+    note: "Door openings deducted: 25 ea"
+    sheet: 1
+    hotspot: { x: 10, y: 36, w: 9, h: 22 }
+boqDownload: false

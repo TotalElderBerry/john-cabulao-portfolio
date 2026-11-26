@@ -12,6 +12,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/content": "^3.17.0",
     "js-yaml": "^5.5.0",
     "mupdf": "^1.28.6",
     "nuxt": "^4.7.0",

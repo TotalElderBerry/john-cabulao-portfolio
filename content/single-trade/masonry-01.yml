@@ -1,0 +1,13 @@
+trade: masonry
+job: 1
+public: true
+projectType: Community building extension
+tool: PlanSwift
+scope: Honed blockwork, lintels
+pages: [1]
+redact: []
+legend:
+  - { label: "BK01 - Architect Honed Blocks (Alabaster)", qty: 26.7, unit: m², color: "#ffdf64" }
+  - { label: "BK02 - Architect Honed Blocks (Charcoal)", qty: 25.5, unit: m², color: "#65e0ff" }
+  - { label: "Lintel above Door D01", qty: 1, unit: m, color: "#ff6565" }
+boqDownload: false

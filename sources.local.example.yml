@@ -3,3 +3,9 @@
 project-one: "MULTI TRADES/Cubit Jobs/<folder>"
 project-two: "MULTI TRADES/PlanSwift Jobs/<folder>"
 project-three: "MULTI TRADES/CostX Jobs/<folder>"
+
+# Names that must never appear in content or CONTENT-REVIEW.md (checked by tests/unit/content.test.ts),
+# in addition to the folder basenames above: client, consultant and reference names, site addresses.
+forbiddenTerms:
+  - <client or company name>
+  - <street or site address>

@@ -1,0 +1,28 @@
+trade: painting
+job: 8
+public: true
+projectType: Residential new build
+tool: PlanSwift
+scope: Internal and external painting, decking and coatings
+pages: [1]
+redact: []
+legend:
+  - { label: "Paint to internal wall of corridor areas @3000mm ht", qty: 27.4, unit: m, color: "#b464b2" }
+  - { label: "Paint to internal walls of general areas @3000mm ht", qty: 157.4, unit: m, color: "#ff6565" }
+  - { label: "Paint to internal walls of general areas @600mm ht", qty: 5.9, unit: m, color: "#ff6565" }
+  - { label: "Paint to internal walls of stairs", qty: 2.4, unit: m, color: "#ff66ff" }
+  - { label: "Allow oil coating to timber ramp", qty: 7.9, unit: m², color: "#65b264" }
+  - { label: "Paint to external FC sheet cladding", qty: 13.5, unit: m, color: "#6766b4" }
+  - { label: "Paint to external columns", qty: 4, unit: ea, color: "#b364b3" }
+  - { label: "Paint to balustrade @1000m ht", qty: 8.6, unit: m, color: "#66b2b2" }
+  - { label: "Paint to ceiling of general areas", qty: 219, unit: m², color: "#ffa362" }
+  - { label: "Paint to ceiling of wet areas", qty: 37.3, unit: m², color: "#c1e0fd" }
+  - { label: "Paint to ceiling of corridor/lobby", qty: 38, unit: m², color: "#e0c1fd" }
+  - { label: "Paint to external soffit", qty: 161.3, unit: m², color: "#e0ffe0" }
+  - { label: "Paint to stair walls of sunken lounge", qty: 6, unit: m, color: "#b56461" }
+  - { label: "Paint to concrete walls of sunken lounge", qty: 8.3, unit: m, color: "#65b264" }
+  - { label: "Allow paint to retaining wall", qty: 24.2, unit: m, color: "#b2b262" }
+  - { label: "Allow paint to door flush panels", qty: 5, unit: ea, color: "#bf8166" }
+  - { label: "Allow sealer to stairway floors", qty: 7.9, unit: m², color: "#6df967" }
+  - { label: "Paint to external decking", qty: 61.8, unit: m², color: "#67b1b4" }
+boqDownload: false

@@ -1,0 +1,52 @@
+trade: plastering
+job: 5
+public: true
+projectType: School administration refurbishment
+tool: PlanSwift
+scope: Internal and external wall linings
+pages: [1]
+redact:
+  - { x: 82, y: 96, w: 18, h: 4 }
+  - { x: 64, y: 29.5, w: 3.4, h: 5.6 }
+legend:
+  - { label: "WTI-11 @3100mm ht", qty: 6.1, unit: m, color: "#fec1e0" }
+  - { label: "WTI-11 @3400mm ht", qty: 2.3, unit: m, color: "#fec1e0" }
+  - { label: "WTI-11 @4100mm ht", qty: 5.1, unit: m, color: "#fec1e0" }
+  - { label: "WTI-11, high level @1600mm ht", qty: 5.0, unit: m, color: "#fec1e0" }
+  - { label: "WTI-11, high level @250mm ht", qty: 2.1, unit: m, color: "#fec1e0" }
+  - { label: "WTI-11, high level @1150mm ht", qty: 1.8, unit: m, color: "#fec1e0" }
+  - { label: "WTI-11 (wet) @2600mm ht", qty: 12.2, unit: m, color: "#ff66ff" }
+  - { label: "WTI-11 (wet) @2800mm ht", qty: 6.0, unit: m, color: "#ff66ff" }
+  - { label: "WTI-11 (wet) @3150mm ht", qty: 3.0, unit: m, color: "#ff66ff" }
+  - { label: "WTI-11 (wet), high level @350mm ht", qty: 3.6, unit: m, color: "#fe65fe" }
+  - { label: "WTI-12 @3150mm ht", qty: 5.0, unit: m, color: "#fffe65" }
+  - { label: "WTI-12 @2800mm ht", qty: 24.4, unit: m, color: "#fffe65" }
+  - { label: "WTI-12, high level @1550mm ht", qty: 8.5, unit: m, color: "#fffe65" }
+  - { label: "WTI-12, high level @1100mm ht", qty: 2.8, unit: m, color: "#fffe65" }
+  - { label: "WTI-12, high level @1450mm ht", qty: 8.2, unit: m, color: "#f6f55c" }
+  - { label: "WTI-12 (curve) @2800mm ht", qty: 1.0, unit: m, color: "#fec166" }
+  - { label: "WTI-12 (curve), high level @1100mm ht", qty: 0.9, unit: m, color: "#fec166" }
+  - { label: "WTI-12 (wet) @2800mm ht", qty: 4.3, unit: m, color: "#fbdcbd" }
+  - { label: "WTI-13 (wet) @2800mm ht", qty: 5.0, unit: m, color: "#65e0ff" }
+  - { label: "WTI-13 (wet) @3150mm ht", qty: 2.5, unit: m, color: "#65e0ff" }
+  - { label: "WTI-14 @2800mm ht", qty: 2.3, unit: m, color: "#b265ff" }
+  - { label: "WTI-16 @2800mm ht", qty: 5.0, unit: m, color: "#65fe65" }
+  - { label: "WTI-16 @3400mm ht", qty: 3.2, unit: m, color: "#65fe65" }
+  - { label: "WTI-16 @4100mm ht", qty: 1.1, unit: m, color: "#65fe65" }
+  - { label: "WTI-16 @3100mm ht", qty: 2.1, unit: m, color: "#65fe65" }
+  - { label: "WTI-16, high level @1600mm ht", qty: 0.7, unit: m, color: "#65fe65" }
+  - { label: "WTI-16 (curve), high level @1550mm ht", qty: 4.7, unit: m, color: "#c2e066" }
+  - { label: "WTI-16 (wet) @2800mm ht", qty: 3.3, unit: m, color: "#65b264" }
+  - { label: "WTE-01 @2400mm ht", qty: 8.6, unit: m, color: "#6566ff" }
+  - { label: "WTE-01 @3150mm ht", qty: 5.3, unit: m, color: "#6566ff" }
+  - { label: "WTE-01 (curve) @3150mm ht", qty: 5.4, unit: m, color: "#c1e0ff" }
+  - { label: "WTE-02, high level @550mm ht", qty: 11.4, unit: m, color: "#ff6565" }
+  - { label: "WTE-02, high level @250mm ht", qty: 9.8, unit: m, color: "#ff6565" }
+  - { label: "WTE-02, high level @750mm ht", qty: 5.6, unit: m, color: "#ff6565" }
+  - { label: "WTE-02, high level @1550mm ht", qty: 10.4, unit: m, color: "#f65c5c" }
+  - { label: "WTE-02, high level @1300mm ht", qty: 9.3, unit: m, color: "#ff6565" }
+  - { label: "WTE-02 @3250mm ht", qty: 8.5, unit: m, color: "#ff6565" }
+  - { label: "WTE-02 (curve), high level @1550mm ht", qty: 8.9, unit: m, color: "#c08366" }
+  - { label: "WTE-02 (wet), high level @350mm ht", qty: 3.9, unit: m, color: "#b36565" }
+  - { label: "External Angle", qty: 9, unit: ea, color: "#b265b3" }
+boqDownload: false

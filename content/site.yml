@@ -1,0 +1,40 @@
+name: John Louis Cabulao
+role: Construction estimator
+bio: >-
+  Registered Civil Engineer and construction estimator. I prepare Bills of Quantities and cost plans
+  for Australian builders, subcontractors and developers — single-trade and multi-trade, across
+  fit-outs, new builds and refurbishments. I measure in PlanSwift and Cubit, price against current
+  market rates, and vet subcontractor and supplier quotes for anomalies, scope gaps and
+  value-engineering opportunities. Known for speed, accuracy and no-surprises estimates.
+statement: >-
+  I measure every wall, door and square metre on your drawings — so the price is right before the
+  first trade is booked.
+email: jlcabulao123456@gmail.com
+phone: null
+location: Cebu City, Philippines — working Australian hours
+software:
+  - PlanSwift
+  - Cubit Estimating
+  - CostX
+  - Excel
+  - AutoCAD
+credentials:
+  - Registered Civil Engineer
+  - BS Civil Engineering, Cum Laude — University of Southern Philippines Foundation, 2023
+  - Construction Estimator, Costimate (Australia, remote)
+  - Freelance estimator for the Australian construction market
+services:
+  - title: Single-trade BOQ
+    send: The drawings and the trade package you're pricing — plastering, painting, carpentry, tiling, masonry and more.
+    get: Marked-up sheets with a colour legend, and a measured BOQ in Excel with notes and assumptions.
+    example: plastering-01
+  - title: Multi-trade BOQ
+    send: The full drawing set, plus specifications and schedules if you have them.
+    get: One coordinated BOQ across civil, structural, architectural, finishes and external works, measured in Cubit.
+  - title: Cost plan estimate
+    send: The drawings and the stage you're at — concept, DA or tender.
+    get: A priced BOQ built on current Australian market rates, with clear assumptions and exclusions.
+  - title: Quote vetting
+    send: The subcontractor or supplier quotes, and the drawings they priced from.
+    get: A line-by-line review that flags pricing anomalies, scope gaps and value-engineering options.
+formSuccess: Thanks — John will reply within one working day.

@@ -1,0 +1,21 @@
+trade: painting
+job: 7
+public: true
+projectType: Warehouse units new build
+tool: PlanSwift
+scope: Internal painting, concrete sealer
+pages: [1]
+redact:
+  - { x: 44.9, y: 65.2, w: 7, h: 0.9 }
+  - { x: 54.4, y: 64.3, w: 6.8, h: 0.55 }
+legend:
+  - { label: "Paint to internal walls in general areas @7200mm ht", qty: 298.4, unit: m, color: "#83a2fd" }
+  - { label: "Paint to internal walls in general areas @2700mm ht", qty: 24.5, unit: m, color: "#83a2fd" }
+  - { label: "Paint to internal walls in wet areas @2800mm ht", qty: 70.8, unit: m, color: "#ff64fd" }
+  - { label: "Paint to internal walls in general areas @2800mm ht", qty: 42.7, unit: m, color: "#84a3fe" }
+  - { label: "Sealer to concrete floor", qty: 1102.8, unit: m², color: "#e0ffff" }
+  - { label: "Paint to ceiling in wet areas", qty: 43.7, unit: m², color: "#ffc1de" }
+  - { label: "Paint to internal single leaf doors", qty: 8, unit: ea, color: "#ffff63" }
+  - { label: "Sealer to concrete ceiling", qty: 57, unit: m², color: "#ffe063" }
+  - { label: "Paint to bulkhead", qty: 3.2, unit: m, color: "#65b262" }
+boqDownload: false

@@ -1,0 +1,15 @@
+trade: painting
+job: 6
+public: true
+projectType: Residential new build
+tool: PlanSwift
+scope: External render to planter boxes and brick walls
+pages: [1]
+redact:
+  - { x: 59, y: 29.4, w: 7.2, h: 3.4 }
+  - { x: 69.4, y: 67.6, w: 6.6, h: 2.8 }
+  - { x: 8.3, y: 32.8, w: 2.9, h: 2.3 }
+legend:
+  - { label: "Linear acrylic rendering to planterbox (top) @ 300mm W", qty: 3.8, unit: m, color: "#65ffff" }
+  - { label: "White colour render to brick walls @ 4600mm ht", qty: 1, unit: m, color: "#c283a2" }
+boqDownload: false

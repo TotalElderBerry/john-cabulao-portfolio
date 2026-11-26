@@ -1,0 +1,23 @@
+trade: tiling
+job: 1
+public: true
+projectType: Food and beverage tenancy fit-out
+tool: PlanSwift
+scope: Floor and wall tiling, caulking, waterstops
+pages: [1]
+redact:
+  - { x: 15, y: 95, w: 55, h: 3.8 }
+legend:
+  - { label: "TL3 - 600 x 600mm floor tiles to seating area", qty: 11.7, unit: m², color: "#66b2b2" }
+  - { label: "TL4 - Floor tiles to store front to lease line", qty: 2.5, unit: m², color: "#ff6565" }
+  - { label: "TL2 - 95 x 95mm wall tiles to servery area @3000mm ht", qty: 0.9, unit: m, color: "#65fe65" }
+  - { label: "TL2 - 95 x 95mm wall tiles to servery area @1600mm ht", qty: 1.9, unit: m, color: "#65fe65" }
+  - { label: "TL2 - 95 x 95mm wall tiles to store front @3300mm ht", qty: 0.9, unit: m, color: "#65fe65" }
+  - { label: "Caulking to wall edges @1600mm ht", qty: 2, unit: ea, color: "#ffff63" }
+  - { label: "Caulking to wall edges @3000mm ht", qty: 2, unit: ea, color: "#ffff63" }
+  - { label: "Caulking to wall edges @3300mm ht", qty: 2, unit: ea, color: "#fffe65" }
+  - { label: "Caulking to floor edges", qty: 11.5, unit: m, color: "#c08366" }
+  - { label: "Caulking to splashback edges", qty: 1.9, unit: m, color: "#ff6565" }
+  - { label: "Caulking to ceiling edges", qty: 1.8, unit: m, color: "#65fe65" }
+  - { label: "Waterstop to door finishes", qty: 1, unit: m, color: "#ff66ff" }
+boqDownload: false

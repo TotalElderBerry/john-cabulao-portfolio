@@ -1,0 +1,15 @@
+trade: plastering
+job: 20
+public: true
+projectType: Office fit-out
+tool: PlanSwift
+scope: Partitions, skirting
+pages: [1]
+redact: []
+legend:
+  - { label: "PAR-61 @3000 mm", qty: 13.4, unit: m, color: "#bebe7e" }
+  - { label: "PAR-60 @3900", qty: 20, unit: m, color: "#7d7cbe" }
+  - { label: "PAR-11 @3000 mm", qty: 7.1, unit: m, color: "#7dfe7d" }
+  - { label: "EA", qty: 19, unit: ea, color: "#ff66ff" }
+  - { label: "Skirting", qty: 32.4, unit: m, color: "#be7c7d" }
+boqDownload: false

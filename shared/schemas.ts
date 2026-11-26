@@ -5,10 +5,17 @@ export type Trade = (typeof TRADES)[number]
 
 const pct = z.number().min(0).max(100)
 
-export const rectSchema = z
-  .object({ x: pct, y: pct, w: pct.gt(0), h: pct.gt(0) })
-  .refine((r) => r.x + r.w <= 100 && r.y + r.h <= 100, { message: 'Rect extends beyond the sheet' })
+const rectFields = { x: pct, y: pct, w: pct.gt(0), h: pct.gt(0) }
+const insideSheet = (r: { x: number; y: number; w: number; h: number }) => r.x + r.w <= 100 && r.y + r.h <= 100
+
+export const rectSchema = z.object(rectFields).refine(insideSheet, { message: 'Rect extends beyond the sheet' })
 export type Rect = z.infer<typeof rectSchema>
+
+/** A redaction rect on one original PDF page (1-based, default 1). */
+export const redactRectSchema = z
+  .object({ ...rectFields, page: z.number().int().min(1).default(1) })
+  .refine(insideSheet, { message: 'Rect extends beyond the sheet' })
+export type RedactRect = z.infer<typeof redactRectSchema>
 
 export const legendItemSchema = z.object({
   label: z.string(),
@@ -24,6 +31,7 @@ export const boqLineSchema = z.object({
   qty: z.number(),
   unit: z.string(),
   note: z.string().optional(),
+  /** Published sheet index (1-based, after the job's `pages` allow-list is applied), not the PDF page number. */
   sheet: z.number().int().min(1),
   hotspot: rectSchema,
 })
@@ -40,7 +48,9 @@ export const jobSchema = z
     projectType: z.string().optional(),
     tool: toolSchema,
     scope: z.string().optional(),
-    redact: z.array(rectSchema).default([]),
+    redact: z.array(redactRectSchema).default([]),
+    // Original PDF pages to publish, in order (default: all). Published pages are renumbered 1..k.
+    pages: z.array(z.number().int().min(1)).min(1).optional(),
     legend: z.array(legendItemSchema).default([]),
     boq: z.array(boqLineSchema).default([]),
     boqDownload: z.boolean().default(false),

@@ -1,0 +1,18 @@
+slug: community-pavilion
+public: true
+title: Community pavilion
+type: New build
+tool: Cubit
+trades: [Civil, Architectural, Landscape, Staging]
+blurb: One stage of a staged village development, measured for civil works, architecture, landscaping and staging.
+hero: "Render.PNG"
+slider: { render: "Render.PNG", takeoff: "2D - Architecture.PNG" }
+gallery:
+  - { file: "2D - Civil Works.PNG", caption: "Civil works, surface finishes" }
+  - { file: "2D - Landscaping.PNG", caption: "Landscaping take-off" }
+  - { file: "2D - Staging.PNG", caption: "Site staging plan" }
+trim:
+  "2D - Architecture.PNG": { x: 29.5, y: 23.5, w: 68.8, h: 68 }
+  "2D - Civil Works.PNG": { x: 39, y: 23.8, w: 46.3, h: 59 }
+  "2D - Landscaping.PNG": { x: 29.2, y: 23.4, w: 55.8, h: 62 }
+  "2D - Staging.PNG": { x: 35.7, y: 23, w: 47.9, h: 67 }

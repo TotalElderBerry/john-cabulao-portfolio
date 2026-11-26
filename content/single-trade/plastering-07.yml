@@ -1,0 +1,18 @@
+trade: plastering
+job: 7
+public: true
+projectType: Office fit-out
+tool: PlanSwift
+scope: Partitions, part-height walls, glazed partitions, doors
+pages: [1]
+redact:
+  - { x: 1, y: 33, w: 3, h: 22 }
+legend:
+  - { label: "Partition wall @3600mm ht", qty: 41.7, unit: m, color: "#ff67ff" }
+  - { label: "Part height partition wall @1200mm ht", qty: 5.7, unit: m, color: "#ffdf64" }
+  - { label: "Part height partition wall (curve) @1200mm ht", qty: 1.4, unit: m, color: "#ffdf64" }
+  - { label: "Make good wall after demolition @3600mm ht", qty: 20.2, unit: m, color: "#66fe65" }
+  - { label: "External Angle", qty: 9, unit: ea, color: "#fe65fc" }
+  - { label: "Glass partition @2700mm ht, partition wall above", qty: 10.5, unit: m, color: "#66fe65" }
+  - { label: "Assume 920 x 2700mm solid core, single leaf door", qty: 7, unit: ea, color: "#6366f8" }
+boqDownload: false

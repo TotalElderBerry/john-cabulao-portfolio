@@ -1,0 +1,14 @@
+trade: tiling
+job: 2
+public: true
+projectType: Entertainment venue fit-out
+tool: PlanSwift
+scope: Wet-area wall tiling, caulking, waterstops
+pages: [1]
+redact:
+  - { x: 14, y: 34.5, w: 2.8, h: 1.2 }
+legend:
+  - { label: "Assume wall tiles to wet area @3000mm ht", qty: 6.5, unit: m, color: "#ff6465" }
+  - { label: "Caulking to wall edges", qty: 4, unit: ea, color: "#fbff67" }
+  - { label: "Waterstop to door finishes", qty: 0.8, unit: m, color: "#66e0fd" }
+boqDownload: false

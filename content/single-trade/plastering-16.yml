@@ -1,0 +1,21 @@
+trade: plastering
+job: 16
+public: true
+projectType: Office fit-out
+tool: PlanSwift
+scope: Partitions, windows, doors
+pages: [1]
+redact:
+  - { x: 0, y: 97, w: 100, h: 3 }
+legend:
+  - { label: "WT1 (R) @3750mm ht", qty: 5.2, unit: m, color: "#ff65ff" }
+  - { label: "WT2 @3100mm ht", qty: 0.4, unit: m, color: "#ffdf65" }
+  - { label: "WT2 (wet/dry) @3100mm ht", qty: 3.5, unit: m, color: "#85a0f8" }
+  - { label: "WT2 (R) @3100mm ht", qty: 15, unit: m, color: "#fa6664" }
+  - { label: "WT2 (R) (wet/dry) @3100mm ht", qty: 3.1, unit: m, color: "#85a0f9" }
+  - { label: "External Angle - 19mm bullnose", qty: 3, unit: ea, color: "#fa67fa" }
+  - { label: "600 x 600mm glass pane set in aluminium frame", qty: 1, unit: ea, color: "#b365b0" }
+  - { label: "900 x 900mm sliding window, assume aluminium frame", qty: 1, unit: ea, color: "#67b0b0" }
+  - { label: "Door - 900 x 2100mm hollow core, single leaf swing door", qty: 4, unit: ea, color: "#fefe66" }
+  - { label: "External Door - 1000 x 2350mm", qty: 1, unit: ea, color: "#c2e066" }
+boqDownload: false

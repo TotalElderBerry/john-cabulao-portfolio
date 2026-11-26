@@ -1,0 +1,45 @@
+trade: carpentry
+job: 5
+public: true
+flagship: true
+projectType: School classroom upgrade
+tool: PlanSwift
+scope: Timber decking, flooring, packers, window reveals, skirting, battens
+pages: [1]
+redact: []
+legend:
+  - { label: "FX-2 with 30mm timber packer@300mm CTS", qty: 88.4, unit: m², color: "#66b2b2" }
+  - { label: "FX-2 to seating risers @ 285mm ht", qty: 21.1, unit: m, color: "#6566ff" }
+  - { label: "FX-2 to seating risers @ 430mm ht", qty: 20.9, unit: m, color: "#b1b266" }
+  - { label: "30mm timber packer @300mm CTS", qty: 203, unit: m², color: "#ffa265" }
+  - { label: "20mm structural floorboard", qty: 203.1, unit: m², color: "#65b264" }
+boq:
+  - ref: "1"
+    description: "FX-2 — 136×19 recycled turpentine decking boards @ 3 mm spacing (verandah)"
+    qty: 108.60
+    unit: m²
+    note: "Measured on plan: 88.4 m² FX-2 with 30 mm packers"
+    sheet: 1
+    hotspot: { x: 36.3, y: 45.5, w: 24, h: 13 }
+  - ref: "4"
+    description: "20 mm structural floorboard (classrooms)"
+    qty: 203.08
+    unit: m²
+    note: "Measured on plan: 203.1 m²"
+    sheet: 1
+    hotspot: { x: 36.3, y: 51.5, w: 31.6, h: 24 }
+  - ref: "5"
+    description: "30 mm timber packer @ 300 mm ctrs under flooring"
+    qty: 971.30
+    unit: m
+    note: "Area on plan: 203.0 m² at 300 mm ctrs"
+    sheet: 1
+    hotspot: { x: 36.3, y: 51.5, w: 14.2, h: 21.5 }
+  - ref: "6"
+    description: "300 mm deep timber window reveals"
+    qty: 85.86
+    unit: m
+    note: "From the window schedule, classroom external walls"
+    sheet: 1
+    hotspot: { x: 55, y: 53, w: 13, h: 22.5 }
+boqDownload: false

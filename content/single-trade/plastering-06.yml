@@ -1,0 +1,17 @@
+trade: plastering
+job: 6
+public: true
+projectType: Office tenancy fit-out
+tool: PlanSwift
+scope: Partitions, glazed partitions
+pages: [1]
+redact: []
+legend:
+  - { label: "P1 @2850mm ht", qty: 32.4, unit: m, color: "#f96060" }
+  - { label: "P2 @3600mm ht", qty: 6.7, unit: m, color: "#c382a2" }
+  - { label: "P1 (curved) @2850mm ht", qty: 1.4, unit: m, color: "#f96060" }
+  - { label: "G1 @2850mm ht", qty: 9.5, unit: m, color: "#65feff" }
+  - { label: "G2 @2850mm ht", qty: 0.8, unit: m, color: "#ffff65" }
+  - { label: "P3 @2850mm ht", qty: 0.6, unit: m, color: "#66fe64" }
+  - { label: "External angles to partition edges", qty: 14, unit: ea, color: "#6282a4" }
+boqDownload: false

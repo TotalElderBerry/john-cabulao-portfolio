@@ -1,0 +1,41 @@
+trade: plastering
+job: 9
+public: true
+projectType: Gallery refurbishment
+tool: PlanSwift
+scope: Stud walls, wall linings, patch and repair
+pages: [1]
+redact:
+  - { x: 0, y: 88.6, w: 40, h: 1.6 }
+  - { x: 91.9, y: 32.5, w: 2.2, h: 3.7 }
+  - { x: 94.4, y: 35.8, w: 2.3, h: 3.6 }
+  - { x: 86.3, y: 35.8, w: 2.6, h: 3 }
+legend:
+  - { label: "1S1 (stud) @4440mm ht", qty: 72.9, unit: m, color: "#ff66ff" }
+  - { label: "1S1 (lining) @3110mm ht", qty: 72.9, unit: m, color: "#ff66ff" }
+  - { label: "1S1c (stud) @4440mm ht", qty: 4.1, unit: m, color: "#65fe65" }
+  - { label: "1S1c (lining) @3110mm ht", qty: 4.1, unit: m, color: "#65fe65" }
+  - { label: "1S1d (stud) @4440mm ht", qty: 2.9, unit: m, color: "#65e0ff" }
+  - { label: "1S1d (lining) @3110mm ht", qty: 2.9, unit: m, color: "#65e0ff" }
+  - { label: "1S1e (stud) @4440mm ht", qty: 0.6, unit: m, color: "#ff6565" }
+  - { label: "1S1e (lining) @3110mm ht", qty: 0.6, unit: m, color: "#ff6565" }
+  - { label: "L2 @4440mm ht", qty: 4.7, unit: m, color: "#ffdf64" }
+  - { label: "L3 @4440mm ht", qty: 3.8, unit: m, color: "#fffe65" }
+  - { label: "1S1e @4440mm ht", qty: 2.4, unit: m, color: "#ff6565" }
+  - { label: "1S1 @4440mm ht", qty: 13.1, unit: m, color: "#ff66ff" }
+  - { label: "1S1b @4440mm ht", qty: 19.1, unit: m, color: "#fffe65" }
+  - { label: "L1 @4440mm ht", qty: 8.2, unit: m, color: "#ff66ff" }
+  - { label: "Patch and repair to existing acoustic insulated wall as required to maintain acoustics @4440mm ht", qty: 20.6, unit: m, color: "#fec166" }
+  - { label: "Patch and repair BOH walls as required @4440mm ht", qty: 15.5, unit: m, color: "#fec166" }
+  - { label: "Patch and repair existing fire rated wall as required to maintain firerating @4440mm ht", qty: 38, unit: m, color: "#fec166" }
+  - { label: "External Angle", qty: 24, unit: ea, color: "#fd67fe" }
+  - { label: "D01 - 3350 x 2500mm", qty: 1, unit: ea, color: "#fcfc61" }
+  - { label: "D02 - 880 x 2500mm", qty: 1, unit: ea, color: "#c2e064" }
+  - { label: "D05 - 880 x 2500mm", qty: 1, unit: ea, color: "#64b363" }
+  - { label: "D06 - 880 x 2500mm", qty: 1, unit: ea, color: "#67fd64" }
+  - { label: "D07 - 920 x 2500mm", qty: 1, unit: ea, color: "#65fefd" }
+  - { label: "D08 - 1700 x 2400mm", qty: 1, unit: ea, color: "#84a1fd" }
+  - { label: "D09 - 1700 x 2400mm", qty: 1, unit: ea, color: "#6566fb" }
+  - { label: "D04 - 600 x 1280mm", qty: 1, unit: ea, color: "#8383c1" }
+  - { label: "Sk02", qty: 7.7, unit: m, color: "#83a2ff" }
+boqDownload: false

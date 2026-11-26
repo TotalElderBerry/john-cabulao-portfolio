@@ -1,0 +1,11 @@
+trade: painting
+job: 10
+public: true
+projectType: Modular building new build
+tool: PlanSwift
+scope: Internal and external painting
+pages: [1]
+redact: []
+legend:
+  - { label: "Paint to downpipes", qty: 19.6, unit: m, color: "#ff6260" }
+boqDownload: false

@@ -1,0 +1,16 @@
+trade: plastering
+job: 2
+public: true
+projectType: Tenancy fit-out
+tool: PlanSwift
+scope: Accessible WC partitions, ceilings, doors
+pages: [1]
+redact:
+  - { x: 43, y: 8, w: 16, h: 4 }
+  - { x: 69, y: 52.2, w: 3.6, h: 1.8 }
+legend:
+  - { label: "Wall - Assume 13mm moisture resistant plasterboard to wet side @2400mm ht", qty: 21.5, unit: m, color: "#fe63fd" }
+  - { label: "Ceiling - Assume 10mm thk moisture resistant plasterboard to ceiling", qty: 13.2, unit: m², color: "#ffdfc2" }
+  - { label: "Door - Assume 900 x 2100mm, solid core single leaf door", qty: 2, unit: ea, color: "#feff5a" }
+  - { label: "External Angle", qty: 5, unit: ea, color: "#fd6565" }
+boqDownload: false

@@ -1,0 +1,14 @@
+trade: carpentry
+job: 6
+public: true
+projectType: Childcare centre extension
+tool: PlanSwift
+scope: Timber stud partitions, skirting
+pages: [1]
+redact:
+  - { x: 5, y: 90.2, w: 12.5, h: 1.5 }
+  - { x: 89.5, y: 0.5, w: 10, h: 6 }
+legend:
+  - { label: "Allow KDHW skirting 100mmH", qty: 26, unit: m, color: "#ff6565" }
+  - { label: "We have allowed for timber studs to all new partitions (Stage 1)", qty: 44.1, unit: m², color: "#fffe65" }
+boqDownload: false

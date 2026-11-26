@@ -1,0 +1,60 @@
+trade: painting
+job: 3
+public: true
+flagship: true
+projectType: Townhouse development
+tool: PlanSwift
+scope: Internal and external painting
+pages: [1]
+redact: []
+legend:
+  - { label: "Paint to ceiling in general areas", qty: 33.4, unit: m², color: "#e0ffff" }
+  - { label: "Paint to ceiling in Store and Garage areas", qty: 22.2, unit: m², color: "#ffe0c1" }
+  - { label: "Paint to ceiling in wet areas", qty: 5, unit: m², color: "#dfc1ff" }
+  - { label: "Paint to external single leaf doors and frames", qty: 1, unit: ea, color: "#f8a762" }
+  - { label: "Paint to external soffit (Alfresco)", qty: 9.4, unit: m², color: "#ffdf64" }
+  - { label: "Paint to external soffit (Porch)", qty: 2.9, unit: m², color: "#65b264" }
+  - { label: "Contrasting paint finish to external walls @3120mm ht", qty: 2.2, unit: m, color: "#8383c1" }
+  - { label: "Paint to internal single leaf doors and frames", qty: 3, unit: ea, color: "#62ff66" }
+  - { label: "Paint to internal walls in general areas @2700mm ht", qty: 25.6, unit: m, color: "#6665b3" }
+  - { label: "Paint to internal walls in Store and Garage area @2700mm ht", qty: 17.6, unit: m, color: "#b36565" }
+  - { label: "Paint to internal walls in wet areas @2700mm ht", qty: 12.7, unit: m, color: "#b265b3" }
+  - { label: "Paint to access panel", qty: 1, unit: ea, color: "#65ffff" }
+  - { label: "Paint finish to external walls @3120mm ht", qty: 0.2, unit: m, color: "#fffc60" }
+boq:
+  - ref: "1"
+    description: "Paint to internal walls in general area"
+    qty: 1680.80
+    unit: m²
+    note: "This sheet (Unit 1 ground floor): 25.6 m @ 2700 ht"
+    sheet: 1
+    hotspot: { x: 36.8, y: 55.5, w: 29.5, h: 16 }
+  - ref: "6"
+    description: "Paint to internal ceiling in general areas"
+    qty: 525.32
+    unit: m²
+    note: "This sheet: 33.4 m²"
+    sheet: 1
+    hotspot: { x: 37, y: 55.9, w: 21, h: 15 }
+  - ref: "11"
+    description: "Paint to internal single leaf doors and frames"
+    qty: 59
+    unit: ea
+    note: "Counted on this sheet: 3 ea"
+    sheet: 1
+    hotspot: { x: 43.2, y: 47.3, w: 9, h: 9.5 }
+  - ref: "12"
+    description: "Paint to external soffit (Alfresco)"
+    qty: 57.21
+    unit: m²
+    note: "This sheet: 9.4 m²"
+    sheet: 1
+    hotspot: { x: 37.1, y: 46.5, w: 5.7, h: 11.2 }
+  - ref: "13"
+    description: "Paint to external soffit (Porch)"
+    qty: 12.82
+    unit: m²
+    note: "This sheet: 2.9 m²"
+    sheet: 1
+    hotspot: { x: 45.3, y: 71.2, w: 7.1, h: 3.3 }
+boqDownload: false

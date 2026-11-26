@@ -1,0 +1,23 @@
+trade: plastering
+job: 12
+public: true
+projectType: Co-working office fit-out
+tool: PlanSwift
+scope: Partitions, glazed partitions, doors
+pages: [1]
+redact: []
+legend:
+  - { label: "P01 @2700mm ht", qty: 52.7, unit: m, color: "#fe6564" }
+  - { label: "P01 (wet on one side) @2700mm ht", qty: 6.7, unit: m, color: "#82a2fe" }
+  - { label: "P02 @3000mm ht", qty: 12.9, unit: m, color: "#b365fe" }
+  - { label: "P02 (wet on one side) @3000mm ht", qty: 5.7, unit: m, color: "#fe66ff" }
+  - { label: "P03 @2700mm ht", qty: 1.2, unit: m, color: "#6665fe" }
+  - { label: "P04 @2700mm ht", qty: 2.1, unit: m, color: "#fea266" }
+  - { label: "P05 @1200mm ht", qty: 0.8, unit: m, color: "#65fe64" }
+  - { label: "G01 @2700mm ht", qty: 3.7, unit: m, color: "#65feff" }
+  - { label: "G02 @3000mm ht", qty: 29.9, unit: m, color: "#feff65" }
+  - { label: "External Angles", qty: 7, unit: ea, color: "#64b263" }
+  - { label: "Allow for facade mullion junctions where walls intersect with perimeter", qty: 5, unit: ea, color: "#64e1ff" }
+  - { label: "D01 - 920x2700mm Single leaf solid MDF door", qty: 13, unit: ea, color: "#6665b3" }
+  - { label: "D02 - 920x2700mm Single leaf solid MDF door", qty: 2, unit: ea, color: "#c2e065" }
+boqDownload: false

@@ -1,0 +1,15 @@
+trade: carpentry
+job: 1
+public: true
+projectType: Education building new build
+tool: PlanSwift
+scope: Window reveals, doors and hardware, wall and ceiling linings, cladding, toilet accessories
+pages: [1]
+redact: []
+legend:
+  - { label: "GR02 - Grab Rail", qty: 8, unit: ea, color: "#65ffff" }
+  - { label: "HD - Hand Dryer", qty: 9, unit: ea, color: "#b36565" }
+  - { label: "GR01 - Grab Rail", qty: 4, unit: ea, color: "#b1b266" }
+  - { label: "SD - Soap Dispenser", qty: 6, unit: ea, color: "#b265b3" }
+  - { label: "TPH - Toilet paper holder", qty: 2, unit: ea, color: "#ff6565" }
+boqDownload: false

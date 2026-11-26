@@ -1,0 +1,30 @@
+trade: plastering
+job: 13
+public: true
+projectType: Office and amenities new build
+tool: PlanSwift
+scope: Partitions, wet-area walls, doors
+pages: [1]
+redact: []
+legend:
+  - { label: "Assume GL1 @300mm ht", qty: 1.3, unit: m, color: "#67fffe" }
+  - { label: "Assume GL1 @2700mm ht", qty: 1.2, unit: m, color: "#65ffff" }
+  - { label: "P1 (Wet) @2700mm ht", qty: 9.3, unit: m, color: "#b265b3" }
+  - { label: "P1 (Wet) @3380mm ht", qty: 6.3, unit: m, color: "#b265b3" }
+  - { label: "P1 (Wet) @3720mm ht", qty: 6, unit: m, color: "#b265b3" }
+  - { label: "P1 @3720mm ht", qty: 13.2, unit: m, color: "#ff66ff" }
+  - { label: "P1 @3380mm ht", qty: 1.6, unit: m, color: "#ff66ff" }
+  - { label: "W2 (Wet both sides) @3830mm ht", qty: 14.9, unit: m, color: "#6566ff" }
+  - { label: "W2 (Wet both sides) @2400mm ht", qty: 5.4, unit: m, color: "#6566ff" }
+  - { label: "W2 (Wet one side) @4050mm ht", qty: 12.4, unit: m, color: "#66b2b2" }
+  - { label: "W2 (Wet one side) @2700mm ht", qty: 9.9, unit: m, color: "#66b2b2" }
+  - { label: "W2 @2700mm ht", qty: 18.1, unit: m, color: "#65fe65" }
+  - { label: "Partition above external window @1885mm ht", qty: 33.9, unit: m, color: "#ffa265" }
+  - { label: "External angle", qty: 9, unit: ea, color: "#65b264" }
+  - { label: "Allow for details to partition to mullion junction", qty: 4, unit: ea, color: "#ff6564" }
+  - { label: "DT1 - 1000x2100mm, Single leaf, Solid core door", qty: 1, unit: ea, color: "#64ff65" }
+  - { label: "DT3 - 1000x2100mm, Single leaf, Solid core door", qty: 6, unit: ea, color: "#fdff67" }
+  - { label: "DT5 - 1575x2400mm, Double leaf, Solid core door", qty: 2, unit: ea, color: "#6567ff" }
+  - { label: "DT6 - 1200x2400mm, Single leaf, sliding glazed door", qty: 3, unit: ea, color: "#b36565" }
+  - { label: "DT8 - 600x2100mm, Single leaf, Solid core door", qty: 1, unit: ea, color: "#ff66ff" }
+boqDownload: false

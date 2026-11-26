@@ -1,0 +1,22 @@
+trade: plastering
+job: 14
+public: true
+projectType: Office fit-out
+tool: PlanSwift
+scope: Partitions, glazed partitions, acoustic insulation
+pages: [1]
+redact:
+  - { x: 0.5, y: 93.3, w: 10.3, h: 2.0 }
+legend:
+  - { label: "T1 @2700mm ht", qty: 64.4, unit: m, color: "#65fe65" }
+  - { label: "T2 @2700mm ht", qty: 30.2, unit: m, color: "#ff66ff" }
+  - { label: "T2 (curved) @2700mm ht", qty: 1.4, unit: m, color: "#ff6565" }
+  - { label: "T3 @3600mm ht", qty: 7.5, unit: m, color: "#6566ff" }
+  - { label: "T4 @1200mm ht", qty: 7.3, unit: m, color: "#ffdf64" }
+  - { label: "T5 @2700mm ht", qty: 3.8, unit: m, color: "#f0a2a2" }
+  - { label: "1200mm wide acoustic insulation", qty: 164.1, unit: m, color: "#c1e0ff" }
+  - { label: "600mm wide baffle block acoustic insulation", qty: 31.7, unit: m, color: "#e0ffe0" }
+  - { label: "External angles", qty: 18, unit: ea, color: "#ffa265" }
+  - { label: "External angles @1200mm ht", qty: 4, unit: ea, color: "#ffa265" }
+  - { label: "Mullion junction", qty: 6, unit: ea, color: "#b663fe" }
+boqDownload: false

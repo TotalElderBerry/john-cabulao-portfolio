@@ -1,0 +1,22 @@
+trade: carpentry
+job: 4
+public: true
+projectType: School classroom building new build
+tool: PlanSwift
+scope: Wall framing and linings, timber doors
+pages: [1]
+redact: []
+legend:
+  - { label: "P2A @600mm ht", qty: 19.4, unit: m, color: "#6665b3" }
+  - { label: "P2A @3000mm ht", qty: 25.9, unit: m, color: "#6665b3" }
+  - { label: "W1 @2350mm ht", qty: 5.8, unit: m, color: "#c2e066" }
+  - { label: "W1 @3550mm ht", qty: 15, unit: m, color: "#c2e066" }
+  - { label: "W1 @4050mm ht", qty: 6.5, unit: m, color: "#c2e066" }
+  - { label: "W1 @5250mm ht", qty: 21.3, unit: m, color: "#c2e066" }
+  - { label: "W3 @1260mm ht", qty: 17.2, unit: m, color: "#6566ff" }
+  - { label: "W3 @2900mm ht; W1 @760mm ht", qty: 2.8, unit: m, color: "#6566ff" }
+  - { label: "DT-04 - 920 x 2340mm, single leaf timber solid core hinged door", qty: 4, unit: ea, color: "#b265b3" }
+  - { label: "DT-03 - 920 x 2340mm, single leaf timber glazed hinged door", qty: 2, unit: ea, color: "#6665b3" }
+  - { label: "DT-06E - 2130 x 3000mm, timber solid core door", qty: 2, unit: ea, color: "#b1b266" }
+  - { label: "DT-06B - 990 x 3000mm, timber solid core door", qty: 1, unit: ea, color: "#67b165" }
+boqDownload: false

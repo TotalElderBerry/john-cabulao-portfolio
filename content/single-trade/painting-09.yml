@@ -1,0 +1,11 @@
+trade: painting
+job: 9
+public: true
+projectType: Multi-residential new build
+tool: PlanSwift
+scope: Internal and external painting
+pages: [1]
+redact: []
+legend:
+  - { label: "Paint to walls in stairs @2470mm ht - Lexicon Qtr", qty: 27, unit: m, color: "#fffe65" }
+boqDownload: false

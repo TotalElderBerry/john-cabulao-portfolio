@@ -1,0 +1,19 @@
+trade: painting
+job: 4
+public: true
+projectType: Multi-residential new build (basement)
+tool: PlanSwift
+scope: Render to internal walls
+pages: [1]
+redact:
+  - { x: 55.5, y: 23.6, w: 7.5, h: 2 }
+  - { x: 55.5, y: 74.1, w: 7.5, h: 2 }
+  - { x: 83.3, y: 35.8, w: 5.2, h: 10.5 }
+legend:
+  - { label: "Render to internal walls in waste room (refer to A6601 ' Interior finishes schedule (basement level)') @2820mm ht", qty: 20.4, unit: m, color: "#808060" }
+  - { label: "Render to internal walls in lift lobbies (refer to A6601 ' Interior finishes schedule (basement level)')@2700mm ht", qty: 50, unit: m, color: "#6664fb" }
+  - { label: "Render to internal walls in lift lobbies (refer to A6601 ' Interior finishes schedule (basement level)') @3280mm ht", qty: 63.4, unit: m, color: "#6565f9" }
+  - { label: "Render to internal walls in lift lobbies (refer to A6601 ' Interior finishes schedule (basement level)') @3230mm ht", qty: 22.3, unit: m, color: "#6466fa" }
+  - { label: "Render to internal walls in fire pump room (refer to A6601 ' Interior finishes schedule (basement level)') @2420mm ht", qty: 16.9, unit: m, color: "#b36464" }
+  - { label: "Render to internal walls in private garage (refer to A6601 ' Interior finishes schedule (basement level)') @3280mm ht", qty: 129.3, unit: m, color: "#63b365" }
+boqDownload: false

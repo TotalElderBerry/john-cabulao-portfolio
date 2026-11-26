@@ -1,0 +1,18 @@
+trade: plastering
+job: 4
+public: true
+projectType: Office fit-out
+tool: PlanSwift
+scope: Partitions, glazed partitions, doors
+pages: [1]
+redact: []
+legend:
+  - { label: "PT1 @2400mm ht", qty: 12.0, unit: m, color: "#fefc63" }
+  - { label: "PT2 @2400mm ht", qty: 8.5, unit: m, color: "#6365fe" }
+  - { label: "PT3 @3600mm ht", qty: 73.3, unit: m, color: "#fd65ff" }
+  - { label: "PT4 @3600mm ht", qty: 9.1, unit: m, color: "#b26463" }
+  - { label: "GT1 @2400mm ht ; PT3 @1200mm ht", qty: 19.9, unit: m, color: "#64b064" }
+  - { label: "External angle", qty: 37, unit: ea, color: "#b0b267" }
+  - { label: "Door - 920x2080mm", qty: 4, unit: ea, color: "#fefe62" }
+  - { label: "Door - 920x2360mm", qty: 10, unit: ea, color: "#6566ff" }
+boqDownload: false

@@ -1,0 +1,22 @@
+slug: events-gallery-fitout
+public: true
+title: Events gallery fit-out
+type: Refurbishment
+tool: Cubit
+trades: [Architectural, Structural, Finishes]
+blurb: Level fit-out of a gallery, events space and mezzanine, from demolition through partitions, finishes and steelwork.
+hero: "Render 1.PNG"
+slider: { render: "Render 2.PNG", takeoff: "2D - Archi.PNG" }
+gallery:
+  - { file: "2D - Archi 2.PNG", caption: "Floor coverings, gallery detail plan" }
+  - { file: "2D - Archi 3.PNG", caption: "Existing and demolition plan" }
+  - { file: "2D - Structural.PNG", caption: "Structural steel, mezzanine" }
+  - { file: "3D - Structural.PNG", caption: "Mezzanine steelwork in 3D" }
+  - { file: "Internal Elevation.PNG", caption: "Internal elevations, glazing and finishes" }
+trim:
+  "2D - Archi.PNG": { x: 33, y: 23.8, w: 65.3, h: 60.7 }
+  "2D - Archi 2.PNG": { x: 33, y: 23.6, w: 65.3, h: 68 }
+  "2D - Archi 3.PNG": { x: 31.5, y: 23.8, w: 66.8, h: 64.5 }
+  "2D - Structural.PNG": { x: 33, y: 23.6, w: 65.3, h: 68 }
+  "3D - Structural.PNG": { x: 33, y: 23.6, w: 65.3, h: 68 }
+  "Internal Elevation.PNG": { x: 29.3, y: 23.5, w: 69, h: 68 }

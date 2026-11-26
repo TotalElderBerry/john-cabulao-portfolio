@@ -1,0 +1,17 @@
+trade: plastering
+job: 11
+public: true
+projectType: Community building upgrade
+tool: PlanSwift
+scope: Plasterboard ceilings, soffit linings, access hatches
+pages: [1]
+redact: []
+legend:
+  - { label: "CL-01 - plasterboard ceiling lining", qty: 30.2, unit: m², color: "#dec0fd" }
+  - { label: "CL-01 - plasterboard ceiling lining", qty: 85.6, unit: m², color: "#fec1e0" }
+  - { label: "CL-02 - Moisture resistant plasterboard ceiling", qty: 21.1, unit: m², color: "#65e0ff" }
+  - { label: "CL-03 - Perforated plasterboard ceiling", qty: 43.3, unit: m², color: "#fcc066" }
+  - { label: "LC-01 - Fibre cement sheet soffit lining (5.0 degrees fall)", qty: 98.4, unit: m², color: "#c2e066" }
+  - { label: "LC-01 - Fibre cement sheet soffit lining (3.0 degrees fall)", qty: 41.1, unit: m², color: "#65b164" }
+  - { label: "ACH - 900x900mm access hatch", qty: 5, unit: ea, color: "#6667ff" }
+boqDownload: false

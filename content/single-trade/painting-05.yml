@@ -1,0 +1,22 @@
+trade: painting
+job: 5
+public: true
+projectType: Residential podium landscaping
+tool: PlanSwift
+scope: Render to retaining walls, edges and planters
+pages: [1]
+redact:
+  - { x: 23.8, y: 25.2, w: 9, h: 1.6 }
+  - { x: 43.5, y: 28.9, w: 3.5, h: 1.4 }
+legend:
+  - { label: "Render to W1 (walls) - retaining wall @800mm ht", qty: 58.2, unit: m, color: "#65e0ff" }
+  - { label: "Render to W1 (top) - retaining wall", qty: 11.1, unit: m², color: "#65e0ff" }
+  - { label: "Render to W2 (walls) - retaining wall @1200mm ht", qty: 83, unit: m, color: "#ff6565" }
+  - { label: "Render to W2 (top) - retaining wall", qty: 12.5, unit: m², color: "#ff6565" }
+  - { label: "Render to CE (top) - Flush Concrete Edging", qty: 3.3, unit: m², color: "#65fe65" }
+  - { label: "Render to ST3 (walls) - Raised Concrete Edge @150mm ht (both sides)", qty: 28, unit: m, color: "#fffe65" }
+  - { label: "Render to ST3 (top) - Raised Concrete Edge", qty: 2.1, unit: m², color: "#fffe65" }
+  - { label: "Render to LF9 (top) - Continuous Seating Wall Plinth with Integrated Backrest", qty: 10.1, unit: m², color: "#fec166" }
+  - { label: "Render to blockwall (walls), assume 1400mm ht", qty: 2.4, unit: m, color: "#fea266" }
+  - { label: "Render to blockwall (top)", qty: 0.2, unit: m², color: "#fea266" }
+boqDownload: false

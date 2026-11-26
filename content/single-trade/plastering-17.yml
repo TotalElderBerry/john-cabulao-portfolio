@@ -1,0 +1,24 @@
+trade: plastering
+job: 17
+public: true
+projectType: Warehouse and office new build
+tool: PlanSwift
+scope: Steel-framed partitions, wet-area walls, doors
+pages: [1]
+redact:
+  - { x: 84.5, y: 39.1, w: 13.5, h: 2.4 }
+legend:
+  - { label: "@2700mm External Angle", qty: 6, unit: ea, color: "#fec164" }
+  - { label: "@3000mm External Angle", qty: 6, unit: ea, color: "#ff64fd" }
+  - { label: "D01 920 x 2040mm", qty: 4, unit: ea, color: "#63afad" }
+  - { label: "D02 920 x 2040mm", qty: 4, unit: ea, color: "#fc6260" }
+  - { label: "D03 920 x 2040mm", qty: 4, unit: ea, color: "#65ff63" }
+  - { label: "P4 (wet) - @2700mm ht Steel Frame", qty: 13.2, unit: m, color: "#83a2fd" }
+  - { label: "P4 (wet) - @3000mm ht Steel Frame", qty: 13.1, unit: m, color: "#ffa264" }
+  - { label: "P4 - @2700mm Steel Frame", qty: 9, unit: m, color: "#63fd61" }
+  - { label: "P4 - @2700mm Steel Frame w/ Insulation", qty: 9.1, unit: m, color: "#65ff63" }
+  - { label: "P4 - @3000mm Steel Frame", qty: 9.1, unit: m, color: "#ff64fd" }
+  - { label: "P4 - @3000mm Steel Frame w/ Insulation", qty: 9.1, unit: m, color: "#c0de62" }
+  - { label: "P9 (wet/dry) - @2700mm ht. Steel Frame", qty: 10.9, unit: m, color: "#64e0fc" }
+  - { label: "P9 (wet/dry) - @3000mm ht. Steel Frame", qty: 10.9, unit: m, color: "#ff6563" }
+boqDownload: false

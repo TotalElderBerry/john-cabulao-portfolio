@@ -1,6 +1,11 @@
 export default defineNuxtConfig({
   compatibilityDate: '2026-11-01',
   devtools: { enabled: false },
+  modules: ['@nuxt/content'],
+  content: {
+    // Node's built-in node:sqlite, so no native sqlite package is needed at build time.
+    experimental: { sqliteConnector: 'native' },
+  },
   ssr: true,
   css: ['~/assets/css/tokens.css', '~/assets/css/base.css'],
   app: {

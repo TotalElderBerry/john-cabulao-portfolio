@@ -1,0 +1,17 @@
+trade: painting
+job: 2
+public: true
+projectType: Residential new build
+tool: PlanSwift
+scope: Render to external walls
+pages: [1]
+redact:
+  - { x: 27, y: 8.4, w: 14.5, h: 3.6 }
+  - { x: 89.3, y: 31.5, w: 2.8, h: 26 }
+  - { x: 50, y: 96.2, w: 50, h: 2.6 }
+  - { x: 37.8, y: 75.6, w: 3.0, h: 5.0 }
+legend:
+  - { label: "Render to (2) Renderoc FC @2700mm ht", qty: 10.1, unit: m, color: "#6267fe" }
+  - { label: "Render to (2) Renderoc FC @2700mm ht", qty: 3.6, unit: m, color: "#6267fe" }
+  - { label: "Render to (2) Renderoc FC @3820mm ht", qty: 3.5, unit: m, color: "#6267fe" }
+boqDownload: false

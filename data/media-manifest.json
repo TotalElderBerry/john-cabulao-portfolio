@@ -1,1 +1,228 @@
-{"jobs":{},"projects":{}}
+{
+  "jobs": {
+    "carpentry-01": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "carpentry-02": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "carpentry-03": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "carpentry-04": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "carpentry-05": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "carpentry-06": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "masonry-01": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "painting-01": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "painting-02": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "painting-03": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "painting-04": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "painting-05": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "painting-06": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "painting-07": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "painting-08": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "painting-09": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "painting-10": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-01": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-02": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-03": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-04": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-05": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-06": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-07": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-08": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-09": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-10": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-11": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-12": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-13": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-14": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-15": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-16": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-17": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-18": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-19": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "plastering-20": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "tiling-01": {
+      "pages": 1,
+      "ratio": 1.4141
+    },
+    "tiling-02": {
+      "pages": 1,
+      "ratio": 1.4141
+    }
+  },
+  "projects": {
+    "aged-care-residence": {
+      "render-1": {
+        "ratio": 1.7778
+      },
+      "3d-structural": {
+        "ratio": 1.8069
+      },
+      "2d-archi": {
+        "ratio": 1.7989
+      },
+      "3d-archi": {
+        "ratio": 1.6075
+      },
+      "2d-structural": {
+        "ratio": 1.8253
+      },
+      "2d-landscape": {
+        "ratio": 1.1246
+      },
+      "external-elevation": {
+        "ratio": 1.8121
+      }
+    },
+    "events-gallery-fitout": {
+      "render-1": {
+        "ratio": 2.0493
+      },
+      "render-2": {
+        "ratio": 1.5155
+      },
+      "2d-archi": {
+        "ratio": 2.0324
+      },
+      "2d-archi-2": {
+        "ratio": 1.828
+      },
+      "2d-archi-3": {
+        "ratio": 1.9588
+      },
+      "2d-structural": {
+        "ratio": 1.8174
+      },
+      "3d-structural": {
+        "ratio": 1.8174
+      },
+      "internal-elevation": {
+        "ratio": 1.9092
+      }
+    },
+    "community-pavilion": {
+      "render": {
+        "ratio": 1.3105
+      },
+      "2d-architecture": {
+        "ratio": 1.9173
+      },
+      "2d-civil-works": {
+        "ratio": 1.4849
+      },
+      "2d-landscaping": {
+        "ratio": 1.7081
+      },
+      "2d-staging": {
+        "ratio": 1.3589
+      }
+    }
+  }
+}

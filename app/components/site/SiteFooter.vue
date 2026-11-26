@@ -1,17 +1,21 @@
+<script setup lang="ts">
+const { data: site } = await useAsyncData('site', () => queryCollection('site').first())
+</script>
+
 <template>
-  <footer class="foot gutter">
+  <footer v-if="site" class="foot gutter">
     <div class="col">
       <div class="label">Contact</div>
-      <a href="mailto:jlcabulao123456@gmail.com">jlcabulao123456@gmail.com</a>
-      <div>Cebu, PH — working AU hours</div>
+      <a :href="`mailto:${site.email}`">{{ site.email }}</a>
+      <div>{{ site.location }}</div>
     </div>
     <div class="col">
       <div class="label">Software</div>
-      <div>PlanSwift, Bluebeam, Excel</div>
+      <div>{{ site.software.join(', ') }}</div>
     </div>
     <div class="col">
       <div class="label">Credentials</div>
-      <div>Civil Engineer</div>
+      <div>{{ site.credentials[0] }}</div>
     </div>
   </footer>
 </template>

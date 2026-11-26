@@ -1,0 +1,18 @@
+trade: plastering
+job: 8
+public: true
+projectType: Office fit-out
+tool: PlanSwift
+scope: Partitions, amenities walls
+pages: [1]
+redact:
+  - { x: 80.7, y: 85, w: 4.6, h: 1.2 }
+  - { x: 42.3, y: 26.4, w: 3.6, h: 3.1 }
+legend:
+  - { label: "PT-70 @2400mm ht", qty: 7.9, unit: m, color: "#66fe64" }
+  - { label: "PT-72 @2400mm ht", qty: 2, unit: m, color: "#fe66ff" }
+  - { label: "PT-73 @2400mm ht", qty: 1.8, unit: m, color: "#fefe64" }
+  - { label: "PT-74 @3600mm ht", qty: 25.8, unit: m, color: "#fe6564" }
+  - { label: "PT-80 @3600mm ht", qty: 30.6, unit: m, color: "#64feff" }
+  - { label: "External angle", qty: 16, unit: ea, color: "#66b164" }
+boqDownload: false

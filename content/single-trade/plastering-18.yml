@@ -1,0 +1,21 @@
+trade: plastering
+job: 18
+public: true
+projectType: Fitness centre fit-out
+tool: PlanSwift
+scope: Partitions, wet-area walls
+pages: [1]
+redact: []
+legend:
+  - { label: "P01 - @4000mm ht.", qty: 22.5, unit: m, color: "#c2e067" }
+  - { label: "P04 - @4000mm ht.", qty: 2, unit: m, color: "#83c1c0" }
+  - { label: "P06 (wet/dry) - @4000mm ht.", qty: 3.9, unit: m, color: "#668066" }
+  - { label: "P11 - @ 4000mm ht.", qty: 11.2, unit: m, color: "#fffe65" }
+  - { label: "P12 (wet/dry) - @4000mm ht.", qty: 6.8, unit: m, color: "#65fe65" }
+  - { label: "P15 - @4000mm ht.", qty: 7.9, unit: m, color: "#fec167" }
+  - { label: "P16 - @ 4000mm ht.", qty: 6, unit: m, color: "#83a2ff" }
+  - { label: "P18 - @4000mm ht.", qty: 9.9, unit: m, color: "#ff6565" }
+  - { label: "P21 (wet/dry) - @4000mm ht.", qty: 2, unit: m, color: "#ffdf64" }
+  - { label: "Assumed P18- @4000mm ht.", qty: 9.8, unit: m, color: "#ffe0c1" }
+  - { label: "External Angle", qty: 8, unit: ea, color: "#fd66ff" }
+boqDownload: false

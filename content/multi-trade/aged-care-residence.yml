@@ -1,0 +1,22 @@
+slug: aged-care-residence
+public: true
+title: Aged care residence
+type: New build
+tool: Cubit
+trades: [Architectural, Structural, Landscape]
+blurb: Four-storey residential aged care building measured across architectural, structural and landscape packages.
+hero: "Render 1.png"
+slider: { render: "Render 1.png", takeoff: "3D - Structural.PNG" }
+gallery:
+  - { file: "2D - Archi.PNG", caption: "Architectural take-off, level 1 partitions" }
+  - { file: "3D - Archi.PNG", caption: "Partitions in 3D, level 1" }
+  - { file: "2D Structural.PNG", caption: "Structural take-off, footings and slab" }
+  - { file: "2D - Landscape.PNG", caption: "Landscape take-off, ground floor" }
+  - { file: "External Elevation.PNG", caption: "External elevations, brickwork and cladding" }
+trim:
+  "3D - Structural.PNG": { x: 33, y: 23.6, w: 65.3, h: 68 }
+  "2D - Archi.PNG": { x: 33, y: 23.6, w: 65.3, h: 68 }
+  "3D - Archi.PNG": { x: 25.8, y: 23, w: 58, h: 68.5 }
+  "2D Structural.PNG": { x: 33, y: 23.6, w: 65.3, h: 68 }
+  "2D - Landscape.PNG": { x: 44.5, y: 28.4, w: 34.8, h: 58.6 }
+  "External Elevation.PNG": { x: 33, y: 23.6, w: 65.3, h: 68 }
