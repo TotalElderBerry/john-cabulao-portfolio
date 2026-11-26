@@ -36,3 +36,8 @@ export function formatQty(n: number, unit: string): string {
   if (unit === 'm' && !s.includes('.')) s += '.0'
   return `${s} ${unit}`
 }
+
+/** Manifest/media key for a job: `<trade>-<nn>`, e.g. `plastering-01`. */
+export function jobId(j: Pick<Job, 'trade' | 'job'>): string {
+  return `${j.trade}-${String(j.job).padStart(2, '0')}`
+}

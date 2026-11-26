@@ -14,3 +14,11 @@ describe('media', () => {
     expect(srcset('/media/jobs/plastering-01/p1', [640, 1600], 'webp')).toBe(
       '/media/jobs/plastering-01/p1-640.webp 640w, /media/jobs/plastering-01/p1-1600.webp 1600w'))
 })
+
+import { kebab } from '../../shared/media'
+describe('kebab', () => {
+  it('turns a source file name into the image name', () => {
+    expect(kebab('Render 1.png')).toBe('render-1')
+    expect(kebab('Take-off  (Final).PNG')).toBe('take-off-final')
+  })
+})

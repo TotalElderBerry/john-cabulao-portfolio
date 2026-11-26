@@ -18,3 +18,9 @@ export function mediaFor(manifest: MediaManifest, kind: 'jobs' | 'projects', key
 export function srcset(base: string, widths: number[], ext: 'webp' | 'jpg'): string {
   return widths.map((w) => `${base}-${w}.${ext} ${w}w`).join(', ')
 }
+
+/** Image name for a project source file: kebab-cased stem, e.g. "Render 1.png" -> "render-1". */
+export function kebab(file: string): string {
+  const stem = file.replace(/^.*[\\/]/, '').replace(/\.[^.]*$/, '')
+  return stem.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+}

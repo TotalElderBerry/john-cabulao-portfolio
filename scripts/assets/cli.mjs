@@ -6,6 +6,8 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import * as yaml from 'js-yaml'
 import sharp from 'sharp'
+import { jobId } from '../../shared/jobs.ts'
+import { kebab } from '../../shared/media.ts'
 import { jobSchema, projectSchema } from '../../shared/schemas.ts'
 import { findFile, findSheetPdf, sourceFolderFor } from './locate.mjs'
 import { redact, trim, writeSizes } from './process.mjs'
@@ -25,8 +27,6 @@ const force = args.includes('--force')
 const onlyIdx = args.indexOf('--only')
 const only = onlyIdx >= 0 ? args[onlyIdx + 1] : null
 
-const kebab = (file) =>
-  path.parse(file).name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
 const sha = (s) => createHash('sha256').update(s).digest('hex')
 const readJson = async (p, fallback) => {
   try {
@@ -61,7 +61,7 @@ const jobFiles = await readYamlDir(path.join(ROOT, 'content/single-trade'))
 const seenJobs = new Set()
 for (const { text, data } of jobFiles) {
   const job = jobSchema.parse(data)
-  const key = `${job.trade}-${String(job.job).padStart(2, '0')}`
+  const key = jobId(job)
   seenJobs.add(key)
   if (only && only !== key) continue
   const outDir = path.join(OUT, 'jobs', key)
