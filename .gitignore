@@ -3,7 +3,6 @@ node_modules
 .output
 .data
 .superpowers/
-public/media/
 sources.local.yml
 *.pdf
 *.xlsx
