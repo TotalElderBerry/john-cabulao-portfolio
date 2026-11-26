@@ -74,9 +74,18 @@ const cycles = [useCycle(doors.value[0]?.thumbs.length ?? 0, 2600, 0), useCycle(
 
 // Hover swaps the big image (pointer devices only; on touch the doorways are plain links).
 const active = ref<number | null>(null)
-let canHover = false
-onMounted(() => { canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches })
-const enter = (i: number) => { if (canHover) active.value = i }
+const canHover = ref(false)
+// The hover images and the later thumbnails are only rendered once the page has loaded and gone idle,
+// so they never compete with the hero image (LCP). On touch devices the hover images never load.
+const armed = ref(false)
+onMounted(() => {
+  canHover.value = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+  const arm = () => { armed.value = true }
+  const idle = () => ('requestIdleCallback' in window ? requestIdleCallback(arm, { timeout: 2000 }) : setTimeout(arm, 200))
+  if (document.readyState === 'complete') idle()
+  else window.addEventListener('load', idle, { once: true })
+})
+const enter = (i: number) => { if (canHover.value) { armed.value = true; active.value = i } }
 const leave = () => { active.value = null }
 const shown = computed(() => (active.value === null ? null : doors.value[active.value]))
 
@@ -104,6 +113,7 @@ useScrollFrame(() => { py.value = reduced.value ? 0 : -scrollY * 0.12 })
         sizes="(max-width: 760px) 100vw, 58vw"
         priority
       />
+      <template v-if="armed && canHover">
       <MediaImg
         v-for="(d, i) in doors"
         :key="d.to"
@@ -115,6 +125,7 @@ useScrollFrame(() => { py.value = reduced.value ? 0 : -scrollY * 0.12 })
         alt=""
         sizes="(max-width: 760px) 100vw, 58vw"
       />
+      </template>
       <span class="tag" aria-hidden="true">{{ shown?.tag }}</span>
     </div>
 
@@ -134,9 +145,9 @@ useScrollFrame(() => { py.value = reduced.value ? 0 : -scrollY * 0.12 })
         @blur="leave"
       >
         <span class="th">
+          <template v-for="(t, k) in d.thumbs" :key="t.id + (t.name ?? '')">
           <MediaImg
-            v-for="(t, k) in d.thumbs"
-            :key="t.id + (t.name ?? '')"
+            v-if="k === 0 || armed"
             :class="{ on: k === cycles[i]?.value }"
             :kind="t.kind"
             :id="t.id"
@@ -144,6 +155,7 @@ useScrollFrame(() => { py.value = reduced.value ? 0 : -scrollY * 0.12 })
             alt=""
             sizes="84px"
           />
+          </template>
         </span>
         <span class="tx"><b>{{ d.label }}<sup>{{ d.count }}</sup></b><em>{{ d.meta }}</em></span>
         <span class="ar" aria-hidden="true">→</span>

@@ -10,8 +10,13 @@ const props = withDefaults(
     sizes?: string
     alt: string
     priority?: boolean
+    /**
+     * Below-the-fold images: render the <picture> only once the box is within 300px of the viewport.
+     * Native lazy loading fetches anything within ~1250-2500px, which competes with the LCP image.
+     */
+    defer?: boolean
   }>(),
-  { page: 1, sizes: '100vw', priority: false },
+  { page: 1, sizes: '100vw', priority: false, defer: false },
 )
 
 const DEFAULT_RATIO = 1.414
@@ -26,11 +31,25 @@ const base = computed(() =>
     : `/media/projects/${props.id}/${props.name}`,
 )
 const width = 1600
+
+const near = ref(!props.defer)
+const box = ref<HTMLElement | null>(null)
+let io: IntersectionObserver | undefined
+onMounted(() => {
+  if (near.value || !box.value) return
+  if (typeof IntersectionObserver === 'undefined') { near.value = true; return }
+  io = new IntersectionObserver((entries) => {
+    if (entries.some((e) => e.isIntersecting)) { near.value = true; io?.disconnect() }
+  }, { rootMargin: '300px 0px' })
+  io.observe(box.value)
+})
+onBeforeUnmount(() => io?.disconnect())
 const height = computed(() => Math.round(width / ratio.value))
 </script>
 
 <template>
-  <picture v-if="entry" class="media">
+  <div v-if="entry && !near" ref="box" class="media-pending" :style="{ aspectRatio: String(ratio) }" />
+  <picture v-else-if="entry" class="media">
     <source type="image/webp" :srcset="srcset(base, widths, 'webp')" :sizes="sizes">
     <source type="image/jpeg" :srcset="srcset(base, widths, 'jpg')" :sizes="sizes">
     <img
@@ -57,6 +76,7 @@ const height = computed(() => Math.round(width / ratio.value))
 <style scoped>
 .media { display: block; }
 .media img { display: block; width: 100%; height: auto; }
+.media-pending { width: 100%; background: var(--soft); }
 .media-placeholder {
   display: grid; place-items: center; width: 100%;
   background: var(--soft); color: var(--mute);

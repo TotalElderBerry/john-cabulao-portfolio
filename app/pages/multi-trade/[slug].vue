@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import MediaImg from '~/components/work/MediaImg.vue'
 import RenderSlider from '~/components/work/RenderSlider.vue'
-import ContactBand from '~/components/site/ContactBand.vue'
-import { kebab } from '~~/shared/media'
+import { kebab, mediaFor } from '~~/shared/media'
 
 const slug = String(useRoute().params.slug)
 const [project, projects, site] = await Promise.all([useProject(slug), useProjects(), useSite()])
@@ -16,7 +15,11 @@ const meta = [
   { k: 'Measured in', v: project.tool },
   { k: 'Trades', v: project.trades.join(' · ') },
 ]
-useHead({ title: `${project.title} · Cabulao` })
+usePageSeo({
+  title: `${project.title} · Cabulao`,
+  description: clip(`${project.blurb ?? `${project.type} measured across ${project.trades.join(', ').toLowerCase()} packages.`} Measured in ${project.tool}.`),
+  image: mediaFor(useManifest(), 'projects', project.slug, kebab(project.hero)) ? `/media/projects/${project.slug}/${kebab(project.hero)}-1600.jpg` : undefined,
+})
 </script>
 
 <template>
@@ -42,7 +45,7 @@ useHead({ title: `${project.title} · Cabulao` })
 
       <div class="gallery">
         <figure v-for="g in project.gallery" :key="g.file">
-          <MediaImg kind="projects" :id="project.slug" :name="kebab(g.file)" :alt="g.caption" sizes="(max-width: 760px) 100vw, 46vw" />
+          <MediaImg kind="projects" :id="project.slug" :name="kebab(g.file)" :alt="g.caption" sizes="(max-width: 760px) 100vw, 46vw" defer />
           <figcaption>{{ g.caption }}</figcaption>
         </figure>
       </div>
@@ -52,7 +55,7 @@ useHead({ title: `${project.title} · Cabulao` })
         <NuxtLink v-if="next" :to="`/multi-trade/${next.slug}/`" class="next"><small>Next →</small> {{ next.title }}</NuxtLink>
       </nav>
     </section>
-    <ContactBand :site="site" />
+    <LazySiteContactBand hydrate-on-visible :site="site" />
   </div>
 </template>
 

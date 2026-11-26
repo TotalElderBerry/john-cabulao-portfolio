@@ -1,4 +1,5 @@
-import { TRADES, type Job, type Trade } from './schemas'
+import { TRADES, type Trade } from './trades'
+import type { Job } from './schemas'
 
 export { TRADES }
 export type { Trade }

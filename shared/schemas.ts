@@ -1,7 +1,9 @@
 import { z } from 'zod'
 
-export const TRADES = ['plastering', 'painting', 'carpentry', 'tiling', 'masonry'] as const
-export type Trade = (typeof TRADES)[number]
+import { TRADES } from './trades'
+
+export { TRADES }
+export type { Trade } from './trades'
 
 const pct = z.number().min(0).max(100)
 

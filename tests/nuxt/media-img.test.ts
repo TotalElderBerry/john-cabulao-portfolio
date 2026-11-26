@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { nextTick } from 'vue'
 import { mountSuspended, mockNuxtImport } from '@nuxt/test-utils/runtime'
 import MediaImg from '~/components/work/MediaImg.vue'
 
@@ -37,5 +38,26 @@ describe('MediaImg', () => {
     expect(img.attributes('loading')).toBe('eager')
     expect(img.attributes('fetchpriority')).toBe('high')
     expect(img.attributes('height')).toBe('800')
+  })
+
+  it('defers the picture until it nears the viewport, holding its box meanwhile', async () => {
+    manifest = { jobs: {}, projects: { 'p-one': { 'render-1': { ratio: 2 } } } }
+    let fire: (entries: { isIntersecting: boolean }[]) => void = () => {}
+    const observed: Element[] = []
+    globalThis.IntersectionObserver = class {
+      constructor(cb: typeof fire) { fire = cb }
+      observe(el: Element) { observed.push(el) }
+      disconnect() {}
+      unobserve() {}
+    } as unknown as typeof IntersectionObserver
+    const w = await mountSuspended(MediaImg, { props: { kind: 'projects', id: 'p-one', name: 'render-1', alt: 'r', defer: true } })
+    expect(w.find('picture').exists()).toBe(false)
+    const box = w.find('.media-pending')
+    expect(box.exists()).toBe(true)
+    expect(box.attributes('style')).toContain('aspect-ratio: 2')
+    expect(observed).toHaveLength(1)
+    fire([{ isIntersecting: true }])
+    await nextTick()
+    expect(w.find('picture img').attributes('loading')).toBe('lazy')
   })
 })

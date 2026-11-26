@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import TradeWall from '~/components/work/TradeWall.vue'
 import { TRADES, jobId, tradeCounts } from '~~/shared/jobs'
 
 const HERO_PROJECT = 'aged-care-residence'
@@ -13,7 +12,7 @@ const counts = computed(() => {
 })
 const scanJob = computed(() => jobs.find((j) => jobId(j) === SCAN_JOB) ?? null)
 
-useSeoMeta({
+usePageSeo({
   title: `${site.name} — ${site.role}`,
   description: site.statement.replace(/\*/g, ''),
 })
@@ -29,14 +28,16 @@ useSeoMeta({
       :projects="projects"
       :jobs="jobs"
     />
-    <HomeStatementReveal :statement="site.statement" />
+    <!-- Below the fold: hydrated when scrolled into view, so their JS and hydration work stay off the LCP path. -->
+    <LazyHomeStatementReveal hydrate-on-visible :statement="site.statement" />
+    <!-- The scan hydrates eagerly: its quantities are scroll-driven from the top of the page. -->
     <HomeTakeoffScan v-if="scanJob" :job="scanJob" />
-    <HomeMultiGallery :projects="projects" />
-    <TradeWall :jobs="jobs" :limit="12">
+    <LazyHomeMultiGallery hydrate-on-visible :projects="projects" />
+    <LazyWorkTradeWall hydrate-on-visible :jobs="jobs" :limit="12">
       <template #foot>
         <NuxtLink :to="'/single-trade/'">See all {{ counts.jobs }} jobs →</NuxtLink>
       </template>
-    </TradeWall>
-    <SiteContactBand :site="site" />
+    </LazyWorkTradeWall>
+    <LazySiteContactBand hydrate-on-visible :site="site" />
   </div>
 </template>

@@ -5,7 +5,10 @@ import { kebab } from '~~/shared/media'
 
 const [projects, site] = await Promise.all([useProjects(), useSite()])
 const pad = (n: number) => String(n).padStart(2, '0')
-useHead({ title: 'Multi-trade projects · Cabulao' })
+usePageSeo({
+  title: 'Multi-trade projects · Cabulao',
+  description: `${projects.length} multi-trade projects measured across every package: ${projects.map((p) => p.title.toLowerCase()).join(', ')}.`,
+})
 </script>
 
 <template>

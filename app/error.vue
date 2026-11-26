@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{ error: { statusCode?: number; statusMessage?: string; message?: string } }>()
-useHead({ title: 'Not found — John Louis Cabulao' })
+useHead({ title: 'Not found — John Louis Cabulao', meta: [{ name: 'robots', content: 'noindex' }] })
 </script>
 
 <template>

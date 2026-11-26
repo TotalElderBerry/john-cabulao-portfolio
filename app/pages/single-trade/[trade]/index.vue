@@ -9,9 +9,9 @@ if (!(TRADES as readonly string[]).includes(slug) || tradeCounts(jobs)[slug as T
   throw createError({ statusCode: 404, statusMessage: 'Not found', fatal: true })
 }
 const label = slug[0]!.toUpperCase() + slug.slice(1)
-useSeoMeta({
+usePageSeo({
   title: `${label} take-offs — John Louis Cabulao`,
-  description: `${tradeCounts(jobs)[slug as Trade]} ${slug} measured packages.`,
+  description: `${tradeCounts(jobs)[slug as Trade]} measured ${slug} packages by John Louis Cabulao: marked-up sheets with a colour legend and a BOQ.`,
 })
 </script>
 

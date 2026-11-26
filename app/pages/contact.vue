@@ -4,7 +4,10 @@ import ContactForm from '~/components/contact/ContactForm.vue'
 const site = await useSite()
 const id = useRuntimeConfig().public.formspreeId as string
 const endpoint = id ? `https://formspree.io/f/${id}` : ''
-useHead({ title: 'Contact · Cabulao' })
+usePageSeo({
+  title: 'Contact · Cabulao',
+  description: `Send drawings to ${site.name}, ${site.role.toLowerCase()} — ${site.location}. Measured BOQs and cost plans for Australian builders and subcontractors.`,
+})
 </script>
 
 <template>

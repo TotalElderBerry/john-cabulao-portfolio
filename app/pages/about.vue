@@ -2,7 +2,7 @@
 import ContactBand from '~/components/site/ContactBand.vue'
 
 const site = await useSite()
-useHead({ title: 'About · Cabulao' })
+usePageSeo({ title: 'About · Cabulao', description: clip(site.bio) })
 </script>
 
 <template>

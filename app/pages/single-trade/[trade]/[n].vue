@@ -33,7 +33,12 @@ const meta = [
   { k: 'Delivered', v: 'Markups + BOQ' },
 ].filter((m): m is { k: string; v: string } => typeof m.v === 'string' && m.v.trim() !== '')
 
-useHead({ title: `${title} · Cabulao` })
+usePageSeo({
+  title: `${title} · Cabulao`,
+  description: clip(
+    `${label} take-off, job ${pad(job.job)}${job.projectType ? ` — ${job.projectType.toLowerCase()}` : ''}${job.scope ? `: ${job.scope}` : ''}. Measured in ${job.tool}, delivered as marked-up sheets and a BOQ.`,
+  ),
+})
 </script>
 
 <template>

@@ -5,9 +5,12 @@
   "scripts": {
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "generate:no-media": "NUXT_PUBLIC_NO_MEDIA=1 nuxt generate && node -e \"require('fs').rmSync('.output-no-media/public/media',{recursive:true,force:true})\"",
     "preview": "node scripts/preview.mjs",
     "test": "vitest run",
     "e2e": "playwright test",
+    "lighthouse": "node scripts/check-lighthouse.mjs",
+    "check": "npm run generate && npm run generate:no-media && vitest run && SKIP_GENERATE=1 playwright test && node scripts/check-lighthouse.mjs",
     "assets": "tsx scripts/assets/cli.mjs",
     "postinstall": "nuxt prepare"
   },
@@ -23,10 +26,13 @@
   },
   "devDependencies": {
     "@nuxt/test-utils": "^4.4.0",
+    "@nuxtjs/sitemap": "^9.2.0",
     "@playwright/test": "^1.65.1",
     "@types/js-yaml": "^4.0.9",
     "@vue/test-utils": "^2.6.0",
+    "chrome-launcher": "^1.2.3",
     "happy-dom": "^21.0.4",
+    "lighthouse": "^13.6.0",
     "tsx": "^4.23.15",
     "typescript": "^5.9.3",
     "vitest": "^5.1.2"

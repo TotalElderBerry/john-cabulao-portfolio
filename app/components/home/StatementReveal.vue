@@ -32,7 +32,7 @@ const isOn = (i: number) => lit.value >= 1 || i / words.value.length < lit.value
   font-size: clamp(30px, 4.6vw, 68px); font-weight: 300; line-height: 1.12; letter-spacing: -.02em;
   margin: 0; max-width: 1300px;
 }
-.statement span { color: #d4d4d4; transition: color .3s; }
+.statement span { color: #949494; transition: color .3s; }
 .statement span.on { color: var(--ink); }
 .statement span.hl.on { color: var(--accent); }
 @media (max-width: 760px) {

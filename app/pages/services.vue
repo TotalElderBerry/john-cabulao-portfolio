@@ -14,7 +14,10 @@ const steps = [
 ]
 const types = ['Fit-outs', 'New builds', 'Refurbishments']
 const pad = (n: number) => String(n).padStart(2, '0')
-useHead({ title: 'Services · Cabulao' })
+usePageSeo({
+  title: 'Services · Cabulao',
+  description: `${site.services.map((s) => s.title).join(', ')} — measured from your drawings by ${site.name}, ${site.role.toLowerCase()}.`,
+})
 </script>
 
 <template>
