@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import TradeWall from '~/components/work/TradeWall.vue'
 import { TRADES, jobId, tradeCounts } from '~~/shared/jobs'
 
 const HERO_PROJECT = 'aged-care-residence'
@@ -31,6 +32,11 @@ useSeoMeta({
     <HomeStatementReveal :statement="site.statement" />
     <HomeTakeoffScan v-if="scanJob" :job="scanJob" />
     <HomeMultiGallery :projects="projects" />
+    <TradeWall :jobs="jobs" :limit="12">
+      <template #foot>
+        <NuxtLink :to="'/single-trade/'">See all {{ counts.jobs }} jobs →</NuxtLink>
+      </template>
+    </TradeWall>
     <SiteContactBand :site="site" />
   </div>
 </template>
