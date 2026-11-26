@@ -8,6 +8,12 @@ test('hero shows both doorways with computed counts', async ({ page }) => {
   await expect(page.getByRole('link', { name: /Single-trade\s*39/ })).toHaveAttribute('href', '/single-trade/')
 })
 
+test('hero intro links to about and lists the main tools', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.getByRole('link', { name: /learn about me/i })).toHaveAttribute('href', '/about/')
+  await expect(page.locator('.hero .tools')).toContainText('PlanSwift')
+})
+
 test('scan quantities reach legend values at the end of the section', async ({ page }) => {
   await page.goto('/')
   await page.locator('#scan').evaluate((el: HTMLElement) => scrollTo(0, el.offsetTop + el.offsetHeight))

@@ -36,6 +36,8 @@ const jobPic = (j: Job): Pic => ({ kind: 'jobs', id: jobId(j) })
 const heroProject = computed(() => props.projects.find((p) => p.slug === props.heroProjectSlug) ?? props.projects[0])
 const scanJob = computed(() => props.jobs.find((j) => jobId(j) === props.scanJobId) ?? props.jobs[0])
 const capital = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
+/** site.yml lists software primary-first; the hero shows the take-off tools. */
+const mainTools = computed(() => props.site.software.slice(0, 3))
 
 const doors = computed<Door[]>(() => {
   // One sheet per trade: the first published job of each.
@@ -97,11 +99,6 @@ useScrollFrame(() => { py.value = reduced.value ? 0 : -scrollY * 0.12 })
 
 <template>
   <section class="hero" :class="{ sw: shown?.drawing }">
-    <div class="intro">
-      <b>{{ site.role }}</b>{{ site.name }} — {{ site.credentials[0] }}. Bills of Quantities and cost plans for
-      Australian builders, subcontractors and developers.
-    </div>
-
     <div class="img" :class="{ swap: !!shown }" :style="{ '--py': `${py}px` }">
       <MediaImg
         v-if="heroProject"
@@ -132,6 +129,20 @@ useScrollFrame(() => { py.value = reduced.value ? 0 : -scrollY * 0.12 })
     <h1 class="word">Measured.</h1>
     <div class="clip" aria-hidden="true"><span class="word">Measured.</span></div>
 
+    <div class="lead">
+    <div class="intro">
+      <b class="role">{{ site.role }}</b>
+      <p class="name">{{ site.name }}</p>
+      <p class="pitch">
+        {{ site.credentials[0] }}. Bills of Quantities and cost plans for Australian builders, subcontractors and
+        developers.
+      </p>
+      <div class="more">
+        <NuxtLink to="/about/" class="btn">Learn about me <span aria-hidden="true">→</span></NuxtLink>
+        <p class="tools"><small>Main tools</small>{{ mainTools.join(' · ') }}</p>
+      </div>
+    </div>
+
     <nav class="doors" aria-label="Start exploring">
       <small class="k">Start exploring</small>
       <NuxtLink
@@ -161,11 +172,13 @@ useScrollFrame(() => { py.value = reduced.value ? 0 : -scrollY * 0.12 })
         <span class="ar" aria-hidden="true">→</span>
       </NuxtLink>
     </nav>
+    </div>
   </section>
 </template>
 
 <style scoped>
-.hero { position: relative; height: 100vh; min-height: 620px; overflow: hidden; }
+/* min-height keeps the giant word below the intro + doorways on short, wide screens */
+.hero { position: relative; height: 100vh; min-height: max(620px, calc(560px + 17vw)); overflow: hidden; }
 
 .img { position: absolute; left: 38%; right: 4vw; top: 14vh; bottom: 9vh; overflow: hidden; background: var(--soft); }
 .img > :deep(*) {
@@ -192,16 +205,32 @@ useScrollFrame(() => { py.value = reduced.value ? 0 : -scrollY * 0.12 })
 .clip .word { color: #fff; transition: color .6s; }
 .hero.sw .clip .word { color: var(--accent); }
 
-.intro { position: absolute; left: 4vw; top: 20vh; max-width: 28vw; font-size: 15px; line-height: 1.55; }
-.intro b {
+.lead {
+  position: absolute; left: 4vw; top: 14vh; width: calc(38% - 4vw - 28px); z-index: 5;
+  display: flex; flex-direction: column; gap: 28px;
+}
+.intro p { margin: 0; }
+.intro .role {
   display: block; font-weight: 500; font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 12px;
+  color: var(--accent); margin-bottom: 10px;
+}
+.intro .name { font-size: clamp(26px, 2.6vw, 38px); font-weight: 300; letter-spacing: -.025em; line-height: 1.05; }
+.intro .pitch { margin-top: 10px; font-size: 15px; line-height: 1.55; max-width: 34em; }
+.intro .more { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 18px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 11px 18px; border: 1px solid var(--ink); font-size: 14px;
+  transition: background .25s, color .25s;
+}
+.btn span { transition: transform .35s cubic-bezier(.2, .7, .2, 1); }
+.btn:hover, .btn:focus-visible { background: var(--ink); color: var(--paper); }
+.btn:hover span, .btn:focus-visible span { transform: translateX(4px); }
+.tools { font-size: 13px; }
+.tools small {
+  display: block; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); margin-bottom: 2px;
 }
 
-.doors {
-  position: absolute; left: 4vw; top: calc(20vh + 175px); width: calc(38% - 4vw - 28px); z-index: 5;
-  border-top: 1px solid var(--ink);
-}
+.doors { border-top: 1px solid var(--ink); }
 .doors .k { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); padding: 12px 0 4px; }
 .door {
   display: grid; grid-template-columns: 84px 1fr 18px; gap: 14px; align-items: center;
@@ -228,12 +257,13 @@ useScrollFrame(() => { py.value = reduced.value ? 0 : -scrollY * 0.12 })
     display: flex; flex-direction: column;
     padding: 96px 16px 40px;
   }
-  .intro, .img, .word, .doors { position: static; inset: auto; }
-  .intro { max-width: none; font-size: 15px; }
+  .lead { display: contents; }
+  .img, .word { position: static; inset: auto; }
+  .intro .name { font-size: 30px; }
   .img { position: relative; order: 1; margin-top: 28px; aspect-ratio: 4 / 3; width: 100%; }
   .img > :deep(*) { height: 100%; transform: none; }
   .word { order: 2; font-size: 22.5vw; line-height: .9; margin: 18px 0 0 -.04em; }
   .clip { display: none; }
-  .doors { order: 3; width: 100%; margin-top: 28px; }
+  .doors { order: 3; margin-top: 28px; }
 }
 </style>
