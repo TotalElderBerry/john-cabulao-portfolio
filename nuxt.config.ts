@@ -11,6 +11,12 @@ const publicJobs = readdirSync('content/single-trade')
 const tradeRoutes = [...new Set(publicJobs.map((j) => j.trade))].map((t) => `/single-trade/${t}/`)
 const jobRoutes = publicJobs.map((j) => jobPath(j as Parameters<typeof jobPath>[0]))
 
+const projectRoutes = readdirSync('content/multi-trade')
+  .filter((f) => f.endsWith('.yml'))
+  .map((f) => load(readFileSync(`content/multi-trade/${f}`, 'utf8')) as { slug: string; public?: boolean })
+  .filter((p) => p.public === true)
+  .map((p) => `/multi-trade/${p.slug}/`)
+
 export default defineNuxtConfig({
   compatibilityDate: '2026-11-01',
   devtools: { enabled: false },
@@ -39,9 +45,9 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       failOnError: true,
-      routes: ['/', '/404.html', '/single-trade/', ...tradeRoutes, ...jobRoutes],
+      routes: ['/', '/404.html', '/single-trade/', ...tradeRoutes, ...jobRoutes, '/multi-trade/', ...projectRoutes],
       // Pages not built yet; the later tasks that build each page remove it from this list.
-      ignore: ['/services/', '/about/', '/contact/', '/multi-trade/'],
+      ignore: ['/services/', '/about/', '/contact/'],
     },
   },
   runtimeConfig: {
