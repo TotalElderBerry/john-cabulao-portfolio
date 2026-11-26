@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import SheetViewer from '~/components/work/SheetViewer.vue'
+import BoqLink from '~/components/work/BoqLink.vue'
 import LegendPanel from '~/components/work/LegendPanel.vue'
 import ContactBand from '~/components/site/ContactBand.vue'
 import { TRADES, jobId, jobPath, neighbours } from '~~/shared/jobs'
@@ -61,8 +62,7 @@ useHead({ title: `${title} · Cabulao` })
         </LegendPanel>
       </div>
 
-      <!-- BOQ slot: Task 9 mounts <BoqLink> here for flagship jobs. -->
-      <div v-if="job.flagship" class="boq-slot" data-slot="boq" />
+      <BoqLink v-if="job.flagship && job.boq?.length" :job-id="id" :lines="job.boq" :ratio="media?.ratio" />
 
       <nav class="pn" aria-label="Other jobs">
         <NuxtLink v-if="prev" :to="jobPath(prev)" class="prev">

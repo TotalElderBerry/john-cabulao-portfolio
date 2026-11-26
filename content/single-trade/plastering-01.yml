@@ -53,5 +53,5 @@ boq:
     unit: Lm
     note: "Door openings deducted: 25 ea"
     sheet: 1
-    hotspot: { x: 10, y: 36, w: 9, h: 22 }
+    hotspot: { x: 9, y: 36.5, w: 14, h: 13 }
 boqDownload: false

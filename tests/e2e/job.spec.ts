@@ -92,3 +92,20 @@ test('no horizontal scroll on the job page', async ({ page }) => {
   const over = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
   expect(over).toBeLessThanOrEqual(0)
 })
+
+test('flagship: BOQ line zooms the drawing and does not open the viewer dialog', async ({ page }) => {
+  await page.goto('/single-trade/plastering/1/')
+  await expect(page.getByRole('heading', { name: 'From drawing to line item.' })).toBeVisible()
+  const line = page.locator('button.line').first()
+  await line.click()
+  await expect(line).toHaveAttribute('aria-pressed', 'true')
+  await expect(page.locator('[data-stage]')).toHaveAttribute('style', /scale\(/)
+  await expect(page.getByRole('dialog')).toHaveCount(0)
+  await page.getByRole('button', { name: 'Whole sheet' }).click()
+  await expect(line).toHaveAttribute('aria-pressed', 'false')
+})
+
+test('non-flagship job has no BOQ link', async ({ page }) => {
+  await page.goto('/single-trade/plastering/2/')
+  await expect(page.getByRole('heading', { name: 'From drawing to line item.' })).toHaveCount(0)
+})
