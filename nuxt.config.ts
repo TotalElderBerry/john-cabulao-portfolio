@@ -1,16 +1,15 @@
 import { readdirSync, readFileSync } from 'node:fs'
 import { load } from 'js-yaml'
+import { jobPath } from './shared/jobs'
 
-// Trades with at least one public job, read from content at config time.
-const tradeRoutes = [
-  ...new Set(
-    readdirSync('content/single-trade')
-      .filter((f) => f.endsWith('.yml'))
-      .map((f) => load(readFileSync(`content/single-trade/${f}`, 'utf8')) as { trade: string; public?: boolean })
-      .filter((j) => j.public === true)
-      .map((j) => j.trade),
-  ),
-].map((t) => `/single-trade/${t}/`)
+// Public jobs, read from content at config time.
+const publicJobs = readdirSync('content/single-trade')
+  .filter((f) => f.endsWith('.yml'))
+  .map((f) => load(readFileSync(`content/single-trade/${f}`, 'utf8')) as { trade: string; job: number; public?: boolean })
+  .filter((j) => j.public === true)
+// Trades with at least one public job.
+const tradeRoutes = [...new Set(publicJobs.map((j) => j.trade))].map((t) => `/single-trade/${t}/`)
+const jobRoutes = publicJobs.map((j) => jobPath(j as Parameters<typeof jobPath>[0]))
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-11-01',
@@ -40,12 +39,9 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       failOnError: true,
-      routes: ['/', '/404.html', '/single-trade/', ...tradeRoutes],
+      routes: ['/', '/404.html', '/single-trade/', ...tradeRoutes, ...jobRoutes],
       // Pages not built yet; the later tasks that build each page remove it from this list.
-      ignore: ['/services/', '/about/', '/contact/', '/multi-trade/',
-        // Job pages arrive in Task 8; remove in Task 8.
-        /^\/single-trade\/[a-z]+\/\d+\/$/,
-      ],
+      ignore: ['/services/', '/about/', '/contact/', '/multi-trade/'],
     },
   },
   runtimeConfig: {
