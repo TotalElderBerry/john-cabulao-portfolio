@@ -23,19 +23,11 @@ test('services lists the four services', async ({ page }) => {
   await expect(page.getByRole('heading', { name: /how it works/i })).toBeVisible()
   await expect(page.locator('a[href^="/single-trade/plastering/"]').first()).toBeVisible()
 })
-test('contact page has the form, email copy button and no file input', async ({ page }) => {
+test('contact page without a form id leads with the email, copy button and no form', async ({ page }) => {
   await page.goto('/contact/')
-  await expect(page.getByLabel(/^Name/)).toBeVisible()
+  await expect(page.getByText('Email your drawings or a download link to John.')).toBeVisible()
+  await expect(page.locator('.addr')).toContainText('@')
   await expect(page.getByRole('button', { name: /copy/i })).toBeVisible()
+  await expect(page.locator('form')).toHaveCount(0)
   await expect(page.locator('input[type="file"]')).toHaveCount(0)
-  await page.getByRole('button', { name: /send/i }).click()
-  await expect(page.locator('.err').first()).toBeVisible()
-})
-test('contact page without a form id shows the email fallback on submit', async ({ page }) => {
-  await page.goto('/contact/')
-  await page.getByLabel(/^Name/).fill('Sam')
-  await page.getByLabel(/^Email/).fill('sam@build.com')
-  await page.getByLabel(/^Message/).fill('Hello')
-  await page.getByRole('button', { name: /send/i }).click()
-  await expect(page.getByRole('alert')).toContainText('@')
 })

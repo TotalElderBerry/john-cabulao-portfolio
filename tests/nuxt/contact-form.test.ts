@@ -52,13 +52,21 @@ describe('ContactForm', () => {
     await w.find('form').trigger('submit')
     await vi.waitFor(() => expect(w.find('[role="alert"]').text()).toContain(email))
   })
-  it('does not post when the endpoint is empty and shows the fallback', async () => {
-    const f = vi.fn(); vi.stubGlobal('fetch', f)
+  it('without an endpoint renders no form, only the email-first fallback', async () => {
     const w = await mountSuspended(ContactForm, { props: { ...props, endpoint: '' } })
+    expect(w.find('form').exists()).toBe(false)
+    expect(w.find('textarea').exists()).toBe(false)
+    expect(w.find('.addr').text()).toBe(email)
+    expect(w.find('button.copy').exists()).toBe(true)
+    expect(w.text()).toContain('Email your drawings or a download link to John.')
+  })
+  it('moves focus to the success message', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true }))
+    const w = await mountSuspended(ContactForm, { props, attachTo: document.body })
     await fill(w, ok)
     await w.find('form').trigger('submit')
-    await vi.waitFor(() => expect(w.find('[role="alert"]').text()).toContain(email))
-    expect(f).not.toHaveBeenCalled()
+    await vi.waitFor(() => expect(document.activeElement?.classList.contains('ok')).toBe(true))
+    w.unmount()
   })
   it('copies the email and shows feedback', async () => {
     const writeText = vi.fn().mockResolvedValue(undefined)

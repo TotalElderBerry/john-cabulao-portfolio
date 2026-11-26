@@ -22,6 +22,9 @@
 .logo { font-weight: 500; }
 .mid a { margin: 0 16px; }
 @media (max-width: 760px) {
-  .mid { display: none; }
+  /* Work, services and about stay reachable: a compact second row under the logo and CTA. */
+  .nav { flex-wrap: wrap; padding: 16px 16px 12px; row-gap: 8px; }
+  .mid { order: 3; flex: 0 0 100%; display: flex; gap: 20px; }
+  .mid a { margin: 0; }
 }
 </style>

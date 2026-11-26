@@ -11,6 +11,7 @@ const form = reactive({
 })
 const errors = reactive<Record<string, string>>({})
 const emailEl = ref<HTMLElement | null>(null)
+const okEl = ref<HTMLElement | null>(null)
 const copyLabel = ref('Copy')
 
 const cap = (s: string) => s[0]!.toUpperCase() + s.slice(1)
@@ -34,7 +35,6 @@ async function submit() {
     if (Object.keys(errors).length) await nextTick(() => (document.querySelector('[aria-invalid="true"]') as HTMLElement | null)?.focus())
     return
   }
-  if (!props.endpoint) { state.value = 'error'; return }
   state.value = 'sending'
   try {
     const res = await fetch(props.endpoint, {
@@ -43,6 +43,7 @@ async function submit() {
       body: JSON.stringify({ ...form, trades: [...form.trades] }),
     })
     state.value = res.ok ? 'success' : 'error'
+    if (res.ok) { await nextTick(); okEl.value?.focus() }
   } catch {
     state.value = 'error'
   }
@@ -72,18 +73,19 @@ const d = (k: string) => (errors[k] ? `err-${k}` : undefined)
 <template>
   <div class="cf">
     <div class="direct">
-      <small>Or email directly</small>
+      <small>{{ endpoint ? 'Or email directly' : 'Email John' }}</small>
       <div class="row">
         <span ref="emailEl" class="addr">{{ email }}</span>
         <button type="button" class="copy" @click="copy">{{ copyLabel }}</button>
         <span class="sr" aria-live="polite">{{ copyLabel === 'Copy' ? '' : copyLabel === 'Copied' ? 'Email copied' : 'Email selected, press copy shortcut' }}</span>
       </div>
+      <p v-if="!endpoint" class="lead">Email your drawings or a download link to John.</p>
       <div v-if="phone" class="phone"><b>Phone</b> {{ phone }}</div>
     </div>
 
-    <p v-if="state === 'success'" class="ok" role="status" tabindex="-1">{{ success }}</p>
+    <p v-if="state === 'success'" ref="okEl" class="ok" role="status" tabindex="-1">{{ success }}</p>
 
-    <form v-else novalidate @submit.prevent="submit">
+    <form v-else-if="endpoint" novalidate @submit.prevent="submit">
       <div class="grid">
         <div class="f">
           <label for="f-name">Name <i>required</i></label>
@@ -160,6 +162,7 @@ small { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color
 .addr { font-size: clamp(20px, 3vw, 34px); font-weight: 300; letter-spacing: -.02em; overflow-wrap: anywhere; user-select: all; }
 .copy { font: inherit; font-size: 13px; background: none; border: 0; border-bottom: 1px solid var(--ink); padding: 2px 0; cursor: pointer; color: var(--ink); }
 .copy:hover { color: var(--accent); border-color: var(--accent); }
+.lead { margin: 14px 0 0; font-size: 16px; line-height: 1.5; }
 .phone { margin-top: 12px; font-size: 14px; }
 .phone b { font-weight: 400; color: var(--mute); margin-right: 8px; }
 .sr, .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }

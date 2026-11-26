@@ -2,6 +2,7 @@
 import MediaImg from '~/components/work/MediaImg.vue'
 import { mediaFor } from '~~/shared/media'
 import { zoomToRect } from '~~/shared/zoom'
+import { formatNumber } from '~~/shared/jobs'
 import type { BoqLine } from '~~/shared/schemas'
 
 const props = withDefaults(
@@ -34,7 +35,7 @@ const hud = computed(() => {
 })
 
 // Quantity and unit sit in separate columns, so format the number alone (2 dp as in the BOQ).
-const qty = (l: BoqLine) => (l.unit === 'ea' || l.unit === 'Item' ? String(Math.round(l.qty)) : l.qty.toFixed(2))
+const qty = (l: BoqLine) => formatNumber(l.qty, l.unit, { fixed: true })
 
 function select(i: number) {
   active.value = i

@@ -36,8 +36,7 @@ usePageSeo({
 
       <RenderSlider
         :slug="project.slug"
-        :render="project.slider.render"
-        :takeoff="project.slider.takeoff"
+        :title="project.title"
         :render-name="kebab(project.slider.render)"
         :takeoff-name="kebab(project.slider.takeoff)"
       />

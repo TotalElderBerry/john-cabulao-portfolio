@@ -1,7 +1,7 @@
 # Content review — for John
 
 Everything below was entered from your drawings, BOQs and resume. Please tick each item or send corrections.
-Nothing here is published yet: `public/media/` (the rendered sheets and screenshots) stays out of the repository until you give written OK.
+Media is published with your confirmation: page 1 of each job's markup and the project images are on the site. Later pages of each job stay unpublished until you clear them.
 
 ## 1. Site copy (`content/site.yml`)
 

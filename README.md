@@ -32,18 +32,19 @@ It writes the images to `public/media/` and the page counts and ratios to `data/
 
 ### The media / OK rule
 
-`public/media/` is git-ignored and stays that way until John gives written OK to publish the drawings. Only
-content with `public: true` ever gets images. Until then the public repository and every deploy build without
-media, and each image renders a designed placeholder ("Drawing available on request"): when `public/media/` is
-absent at build time, the manifest is treated as empty (see `nuxt.config.ts` and `app/composables/useManifest.ts`).
+`public/media/` is committed. John confirmed that page 1 of each job's markup and the project images may be
+published; only content with `public: true` ever gets images. Later pages of a job stay unpublished until John
+clears them, so `npm run assets` must not be run for those pages until then. When `public/media/` is absent at
+build time (a checkout without it), the manifest is treated as empty and every image renders a designed
+placeholder ("Drawing available on request"); see `nuxt.config.ts` and `app/composables/useManifest.ts`.
 `NUXT_PUBLIC_NO_MEDIA=1` forces the same behaviour locally.
 
 ## Environment variables
 
 | Variable | Used for | Default |
 | --- | --- | --- |
-| `NUXT_PUBLIC_SITE_URL` | Canonical and Open Graph URLs, `sitemap.xml`, `robots.txt`, JSON-LD | `https://example.com` |
-| `NUXT_PUBLIC_FORMSPREE_ID` | Contact form endpoint (`https://formspree.io/f/<id>`); without it the form falls back to email | empty |
+| `NUXT_PUBLIC_SITE_URL` | Canonical and Open Graph URLs, `sitemap.xml`, `robots.txt`, JSON-LD | `https://$VERCEL_PROJECT_PRODUCTION_URL` on Vercel, else `https://example.com` (a production build on Vercel warns if it has to use that) |
+| `NUXT_PUBLIC_FORMSPREE_ID` | Contact form endpoint (`https://formspree.io/f/<id>`); without it the contact page shows no form, only the email address and copy button | empty |
 | `NUXT_PUBLIC_NO_MEDIA` | `1` builds as if `public/media/` were absent (into `.output-no-media/`) | unset |
 | `PORTFOLIO_SOURCE` | Source folder for `npm run assets` | `..` |
 | `CHROME_PATH` | Chrome for the Lighthouse gate; falls back to Playwright's Chromium | system Chrome |
@@ -53,9 +54,12 @@ Set the two `NUXT_PUBLIC_*` values at build time; the site is static, so changin
 ## Vercel
 
 - Framework preset: **Nuxt**
-- Build command: `npm run generate`
-- Output directory: `.output/public`
-- Environment variables: `NUXT_PUBLIC_SITE_URL` (the production URL, no trailing slash) and `NUXT_PUBLIC_FORMSPREE_ID`
+- Build command: `npm run build` (runs `nuxt generate`)
+- Output directory: leave it at the default. On Vercel, Nitro detects the platform and uses its `vercel-static`
+  preset, which writes the prerendered site to `.vercel/output/static` (Build Output API). Do not set the output
+  directory to `.output/public`; that would bypass it.
+- Environment variables: `NUXT_PUBLIC_SITE_URL` (the production URL, no trailing slash; optional on Vercel, which
+  supplies `VERCEL_PROJECT_PRODUCTION_URL` as the fallback) and `NUXT_PUBLIC_FORMSPREE_ID`
 
 ## Tests and quality gates
 

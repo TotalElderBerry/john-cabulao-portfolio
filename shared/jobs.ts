@@ -31,11 +31,17 @@ export function neighbours(jobs: Job[], current: Job): { prev: Job | null; next:
   return { prev, next }
 }
 
-export function formatQty(n: number, unit: string): string {
-  if (unit === 'ea' || unit === 'Item') return `${Math.round(n)} ${unit}`
+/** Number part of a quantity: whole for ea/Item, else rounded to 2 dp. `fixed` keeps trailing zeros (BOQ tables: 72.60). */
+export function formatNumber(n: number, unit: string, opts: { fixed?: boolean } = {}): string {
+  if (unit === 'ea' || unit === 'Item') return String(Math.round(n))
+  if (opts.fixed) return n.toFixed(2)
   let s = String(Math.round(n * 100) / 100)
   if (unit === 'm' && !s.includes('.')) s += '.0'
-  return `${s} ${unit}`
+  return s
+}
+
+export function formatQty(n: number, unit: string): string {
+  return `${formatNumber(n, unit)} ${unit}`
 }
 
 /** Manifest/media key for a job: `<trade>-<nn>`, e.g. `plastering-01`. */

@@ -22,6 +22,19 @@ test('reduced motion shows final state without scrolling', async ({ browser }) =
   await page.close()
 })
 
+test('reduced motion stacks the gallery so the last panel and All projects are visible', async ({ browser }) => {
+  const page = await browser.newPage({ reducedMotion: 'reduce', viewport: { width: 1280, height: 800 } })
+  await page.goto('/')
+  const panels = page.locator('#multi .panel')
+  await panels.last().scrollIntoViewIfNeeded()
+  await expect(panels.nth(await panels.count() - 2)).toBeVisible()
+  const link = page.getByRole('link', { name: /All projects/ })
+  await link.scrollIntoViewIfNeeded()
+  await expect(link).toBeInViewport()
+  expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)).toBe(false)
+  await page.close()
+})
+
 test('statement text and gallery end link are in the prerendered HTML', async ({ request }) => {
   const html = await (await request.get('/')).text()
   expect(html).toContain('>square</span>')

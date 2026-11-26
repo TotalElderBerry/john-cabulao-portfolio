@@ -89,7 +89,7 @@ defineExpose({ sheet })
       @close="onClosed"
     >
       <button type="button" class="close" @click="close">Close <span aria-hidden="true">×</span></button>
-      <div ref="pan" class="pan">
+      <div ref="pan" class="pan" tabindex="0" aria-label="Enlarged sheet, scroll to pan">
         <picture v-if="isOpen">
           <source type="image/webp" :srcset="big.webp">
           <img :src="big.jpg" :alt="`${alt}, enlarged`" @load="centre">

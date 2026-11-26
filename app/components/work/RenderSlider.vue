@@ -2,7 +2,7 @@
 import MediaImg from '~/components/work/MediaImg.vue'
 import { mediaFor } from '~~/shared/media'
 
-const props = defineProps<{ slug: string; render: string; takeoff: string; renderName: string; takeoffName: string }>()
+const props = defineProps<{ slug: string; title: string; renderName: string; takeoffName: string }>()
 
 const pos = ref(50)
 const box = ref<HTMLElement | null>(null)
@@ -48,9 +48,9 @@ function key(e: KeyboardEvent) {
     @pointerup="up"
     @pointercancel="up"
   >
-    <div class="layer"><MediaImg kind="projects" :id="slug" :name="renderName" :alt="`${slug} render`" sizes="(max-width: 760px) 100vw, 92vw" priority /></div>
+    <div class="layer"><MediaImg kind="projects" :id="slug" :name="renderName" :alt="`${title} — render`" sizes="(max-width: 760px) 100vw, 92vw" priority /></div>
     <div class="layer top" :style="{ clipPath: `inset(0 0 0 ${pos}%)` }">
-      <MediaImg kind="projects" :id="slug" :name="takeoffName" :alt="`${slug} take-off`" sizes="(max-width: 760px) 100vw, 92vw" />
+      <MediaImg kind="projects" :id="slug" :name="takeoffName" :alt="`${title} — take-off`" sizes="(max-width: 760px) 100vw, 92vw" />
     </div>
     <span class="lab l">Render</span>
     <span class="lab r">Take-off</span>

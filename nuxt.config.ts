@@ -1,6 +1,7 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { load } from 'js-yaml'
 import { jobPath } from './shared/jobs'
+import { resolveSiteUrl } from './shared/site-url'
 
 // Public jobs, read from content at config time.
 const publicJobs = readdirSync('content/single-trade')
@@ -18,7 +19,10 @@ const projectRoutes = readdirSync('content/multi-trade')
   .map((p) => `/multi-trade/${p.slug}/`)
 
 // Public site URL for canonical/og URLs, the sitemap and robots.txt.
-const siteUrl = (process.env.NUXT_PUBLIC_SITE_URL || 'https://example.com').replace(/\/+$/, '')
+const { url: siteUrl, warn: siteUrlIsPlaceholder } = resolveSiteUrl(process.env)
+if (siteUrlIsPlaceholder) {
+  console.warn('[site-url] Production build without NUXT_PUBLIC_SITE_URL or VERCEL_PROJECT_PRODUCTION_URL: canonical URLs, the sitemap and robots.txt will point at https://example.com. Set NUXT_PUBLIC_SITE_URL.')
+}
 // No media: public/media is git-ignored, so a deploy from the public repo has the manifest but no files.
 // Then every image renders its placeholder. NUXT_PUBLIC_NO_MEDIA=1 forces this (tests/e2e/no-media.spec.ts)
 // and builds into separate .nuxt-no-media / .output-no-media folders so the normal build is untouched.

@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "nuxt dev",
+    "build": "nuxt generate",
     "generate": "nuxt generate",
     "generate:no-media": "NUXT_PUBLIC_NO_MEDIA=1 nuxt generate && node -e \"require('fs').rmSync('.output-no-media/public/media',{recursive:true,force:true})\"",
     "preview": "node scripts/preview.mjs",

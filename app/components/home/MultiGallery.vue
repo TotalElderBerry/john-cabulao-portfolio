@@ -5,6 +5,10 @@ import { kebab } from '~~/shared/media'
 
 const props = defineProps<{ projects: Project[] }>()
 
+// html.js is set by an inline head script before first paint, so no-JS visitors keep the stacked layout
+// (see the html:not(.js) rules below) while normal desktop never shows a stacked-then-pinned jump.
+useHead({ script: [{ innerHTML: "document.documentElement.classList.add('js')", tagPosition: 'head' }] })
+
 const pad = (n: number) => String(n).padStart(2, '0')
 const tools = computed(() => [...new Set(props.projects.map((p) => p.tool))].join(' · '))
 
@@ -100,6 +104,8 @@ header span { font-size: 13px; color: var(--mute); }
 .panel.end { flex-basis: 30vw; display: flex; align-items: center; }
 .panel.end a { font-size: 30px; font-weight: 300; border-bottom: 1px solid var(--ink); padding-bottom: 6px; }
 
+/* Stacked layout: narrow screens, reduced motion, and no-JS (html:not(.js)). Reduced motion gets no pin,
+   no horizontal track and no curtain, so every panel and "All projects" are reachable by plain scrolling. */
 @media (max-width: 760px) {
   .multi { height: auto; padding: 12vh 0 4vh; }
   .pin { position: static; height: auto; overflow: visible; }
@@ -112,4 +118,29 @@ header span { font-size: 13px; color: var(--mute); }
   .cap h3 { font-size: 22px; }
   .panel.end a { font-size: 24px; }
 }
+@media (prefers-reduced-motion: reduce) {
+  .multi { height: auto; padding: 12vh 0 4vh; }
+  .pin { position: static; height: auto; overflow: visible; }
+  header { flex-direction: column; gap: 10px; padding: 0 16px 28px; }
+  .track { flex-direction: column; gap: 40px; padding: 0 16px; transform: none !important; }
+  .panel, .panel.end { flex: none; width: 100%; }
+  .ph { height: auto; aspect-ratio: 4 / 3; }
+  .cap { grid-template-columns: 34px 1fr; }
+  .cap .t { grid-column: 2; }
+  .cap h3 { font-size: 22px; }
+  .panel.end a { font-size: 24px; }
+  .curtain { display: none; }
+}
+
+/* No JS: same stacked layout. */
+:global(html:not(.js)) .multi { height: auto; padding: 12vh 0 4vh; }
+  :global(html:not(.js)) .pin { position: static; height: auto; overflow: visible; }
+  :global(html:not(.js)) header { flex-direction: column; gap: 10px; padding: 0 16px 28px; }
+  :global(html:not(.js)) .track { flex-direction: column; gap: 40px; padding: 0 16px; transform: none !important; }
+  :global(html:not(.js)) .panel, :global(html:not(.js)) .panel.end { flex: none; width: 100%; }
+  :global(html:not(.js)) .ph { height: auto; aspect-ratio: 4 / 3; }
+  :global(html:not(.js)) .cap { grid-template-columns: 34px 1fr; }
+  :global(html:not(.js)) .cap .t { grid-column: 2; }
+  :global(html:not(.js)) .cap h3 { font-size: 22px; }
+  :global(html:not(.js)) .panel.end a { font-size: 24px; }
 </style>

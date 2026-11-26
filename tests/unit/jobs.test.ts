@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { jobSchema } from '../../shared/schemas'
-import { tradeCounts, neighbours, jobPath, formatQty } from '../../shared/jobs'
+import { tradeCounts, neighbours, jobPath, formatQty, formatNumber } from '../../shared/jobs'
 
 const j = (trade: string, job: number, pub = true) => jobSchema.parse({ trade, job, public: pub, tool: 'PlanSwift' })
 
@@ -24,4 +24,10 @@ describe('jobId', () => {
     expect(jobId({ trade: 'plastering', job: 1 })).toBe('plastering-01')
     expect(jobId({ trade: 'carpentry', job: 12 })).toBe('carpentry-12')
   })
+})
+
+describe('formatNumber', () => {
+  it.each([[72.6, 'Lm', true, '72.60'], [59, 'ea', true, '59'], [1.4, 'Item', true, '1'], [335.05, 'm²', true, '335.05'],
+    [56, 'm', false, '56.0'], [56, 'm', true, '56.00'], [22, 'ea', false, '22']])('formats %s %s fixed=%s', (n, u, fixed, out) =>
+    expect(formatNumber(n as number, u as string, { fixed: fixed as boolean })).toBe(out))
 })

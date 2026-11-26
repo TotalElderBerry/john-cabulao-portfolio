@@ -9,6 +9,7 @@ const out = resolve(__dirname, '../../.output/public')
 const built = existsSync(resolve(out, 'index.html'))
 const forbidden = loadForbiddenTerms()
 const hero = resolve(out, 'media/projects/aged-care-residence/render-1-1600.webp')
+const heroJpg = hero.replace(/\.webp$/, '.jpg')
 const shipped = built ? globSync('**/*.{html,js,json,xml,txt}', { cwd: out }).map((f) => resolve(out, f)) : []
 const read = (f: string) => readFileSync(f, 'utf8')
 const page = (p: string) => read(resolve(out, p.replace(/^\//, ''), 'index.html'))
@@ -34,6 +35,7 @@ describe.skipIf(!built)('generated output', () => {
 
   it.skipIf(!existsSync(hero))('keeps the hero image within budget', () => {
     expect(statSync(hero).size).toBeLessThanOrEqual(250 * 1024)
+    expect(statSync(heroJpg).size).toBeLessThanOrEqual(250 * 1024)
   })
 
   it('has a sitemap with every job', () => {
